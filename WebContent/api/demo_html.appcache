@@ -1,0 +1,13 @@
+CACHE MANIFEST
+# 2012-02-21 v1.0.0
+/theme.css
+/logo.gif
+/main.js
+w3school_banner.gif
+demo_time.js
+
+NETWORK:
+login.asp
+
+FALLBACK:
+/html/ /offline.html

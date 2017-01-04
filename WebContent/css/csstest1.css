@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+h1 {
+	color: red;font-size: 18sp;background-color:aqua;
+}
+
+p {
+	color: blue;font-size: 10sp;background-color:navy;
+}
