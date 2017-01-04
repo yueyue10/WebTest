@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>表单界面</title>
+</head>
+<body>
+	<form>
+		<input type="radio" name="sex" value="male" checked>Male <br>
+		<input type="radio" name="sex" value="female">Female
+	</form>
+	<!-- 表单提交 -->
+	<p>表单提交示例</p>
+	<form action="action_page.php">
+		First name:<br> <input type="text" name="firstname"
+			value="Mickey"> <br> Last name:<br> <input
+			type="text" name="lastname" value="Mouse"> <br> <br>
+		<input type="submit" value="Submit">
+	</form>
+	<p>组合表单数据提交示例</p>
+	<form action="action_page.php">
+		<fieldset>
+			<legend>Personal information:</legend>
+			First name:<br> <input type="text" name="firstname"
+				value="Mickey"> <br> Last name:<br> <input
+				type="text" name="lastname" value="Mouse"> <br> <br>
+			<input type="submit" value="Submit">
+		</fieldset>
+	</form>
+	<p>您可以通过 selected 属性预选择某些选项。</p>
+
+	<form action="action_page.php">
+		<select name="cars">
+			<option value="volvo">Volvo</option>
+			<option value="saab">Saab</option>
+			<option value="fiat" selected>Fiat</option>
+			<option value="audi">Audi</option>
+		</select> <br> <br> <input type="submit">
+	</form>
+	<p>弹窗示例</p>
+	<button type="button" onclick="alert('Hello World!')">点击我！</button>
+	<p>预定义选项的下拉列表。加入disabled属性</p>
+	<form action="action_page.php">
+
+		<input list="browsers" name="browser" disabled>
+		<datalist id="browsers">
+		<option value="Internet Explorer">
+		<option value="Firefox">
+		<option value="Chrome">
+		<option value="Opera">
+		<option value="Safari">
+		</datalist>
+		<input type="submit">
+	</form>
+
+	<p>
+		<b>注释：</b>Safari 或 IE9（以及更早的版本）不支持 datalist 标签。
+	</p>
+	<h4>输入类型:number,加入属性readonly</h4>
+	<form action="action_page.php">
+		Quantity (between 1 and 5): <input type="number" name="quantity"
+			value="3" min="1" max="5" readonly> <input type="submit">
+	</form>
+
+	<p>
+		<b>Note:</b> type="number" is not supported in IE9 and earlier.
+	</p>
+	<h4>输入类型:color,加入maxlength属性</h4>
+	<form action="action_page.php">
+		Select your favorite color: <input type="color" name="favcolor"
+			value="#ff0000" maxlength="10"> <input type="submit">
+	</form>
+	<h4>表单加入autocomplete属性</h4>
+	<form action="action_page.php" autocomplete="on">
+		First name:<input type="text" name="fname"><br> Last
+		name: <input type="text" name="lname"><br> E-mail: <input
+			type="email" name="email" autocomplete="off"><br> <input
+			type="submit">
+	</form>
+</body>
+</html>

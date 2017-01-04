@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HTML5 Web 存储</title>
+<script>
+	function clickCounter() {
+		if (typeof (Storage) !== "undefined") {
+			if (localStorage.clickcount) {
+				localStorage.clickcount = Number(localStorage.clickcount) + 1;
+			} else {
+				localStorage.clickcount = 1;
+			}
+			document.getElementById("result").innerHTML = "您已经点击这个按钮 "
+					+ localStorage.clickcount + " 次。";
+		} else {
+			document.getElementById("result").innerHTML = "抱歉！您的浏览器不支持 Web Storage ...";
+		}
+	}
+</script>
+</head>
+<body>
+	<h5>localStorage 对象</h5>
+	<h5>localStorage 对象存储的是没有截止日期的数据。当浏览器被关闭时数据不会被删除，在下一天、周或年中，都是可用的。</h5>
+	<p>
+		<button onclick="clickCounter()" type="button">请点击这里！</button>
+	</p>
+	<div id="result"></div>
+	<p>请点击按钮使计数器递增。</p>
+	<p>请关闭浏览器或标签页，然后再试一次，计数器将继续计数（不会重置）。</p>
+</body>
+</html>

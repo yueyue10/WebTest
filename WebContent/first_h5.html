@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>First H5</title>
+<link rel="stylesheet" type="text/css" href="css\csstest1.css">
+</head>
+<body style="background-color: PowderBlue;">
+	<h1 align="center">这是主标题</h1>
+	<hr />
+	<h2 align="center" style="background-color: red">这是副标题</h2>
+	<hr color="pink" width="500sp" />
+	<!-- 这是一个分割线 -->
+	<a href="https://www.baidu.com" >百度一下</a>
+	<!-- 下面的这行会在新窗口打开一个链接： -->
+	<a href="https://www.baidu.com" target="_blank" style="background-color: orange;left: 100sp">百度一下</a>
+	<p style="font-family: verdana; color: red; text-align: right">这是一个向右边对齐的段落</p>
+	<p style="font-family: times; color: green">
+		这里执行<br />换行<br />换行
+	</p>
+	<!-- 这里使用的是内联样式 -->
+	<p
+		style="font-family: arial; font-size: 30px; color: red; background-color: blue">This
+		text is 30 pixels high</p>
+	<!-- 下面是字体样式 -->
+	<b>This text is bold</b>
+	<br />
+	<strong>This text is strong</strong>
+	<br />
+	<big>This text is big</big>
+	<br />
+	<em>This text is emphasized</em>
+	<br />
+	<i>This text is italic</i>
+	<br />
+	<small>This text is small</small>
+	<br /> This text contains
+	<sub>subscript</sub>
+	<br /> This text contains
+	<sup>superscript</sup>
+	<!-- 字体样式结束 -->
+	<!-- 这是预制格式文本，它保留了空格和换行 -->
+	<pre>
+	public static void main(String[] args) throws Exception {
+		String photourl = "storage/emulated/0/Pictures/multi_image_20161222_163801.jpg";
+		String fileName = photourl.substring(photourl.lastIndexOf("/") + 1);
+		System.out.println("fileName:" + fileName);
+	}
+	</pre>
+	<!-- 预制格式文本结束 -->
+	<!-- 编程标签开始 -->
+	<code>Computer code like var person = {firstName:"Bill",
+		lastName:"Gats", age:50} </code>
+	<br />
+	<kbd>Keyboard input</kbd>
+	<br />
+	<tt>Teletype text</tt>
+	<br />
+	<samp>Sample text</samp>
+	<br />
+	<var>Computer variable</var>
+	<br />
+	<p>
+		<b>注释：</b>这些标签常用于显示计算机/编程代码。
+	</p>
+	<!-- 编程标签结束 -->
+	<!-- 引用的标签开始 使用 blockquote 元素的话，浏览器会插入换行和外边距，而 q 元素不会有任何特殊的呈现。-->
+	这是短的引用：
+	<q> 这是短的引用。 </q> 这是长的引用：
+	<blockquote>这是长的引用。这是长的引用。这是长的引用</blockquote>
+	<!-- 引用的标签结束-->
+	<!-- 使用样式属性做一个没有下划线的链接 -->
+	<a href="index1.html" style="text-decoration: none"> 这是一个链接！ </a>
+	<!-- 在head里面使用<link> 标签链接到一个外部样式表 。同理还有内部样式表-->
+	<h1>我通过外部样式表进行格式化。</h1> 
+	<p>我也一样！</p>
+	<a href="h5luoji.html">有用的提示</a>
+</body>
+</html>

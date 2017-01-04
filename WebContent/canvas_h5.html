@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Html画布</title>
+<style type="text/css">
+body {
+	font-size: 70%;
+	font-family: verdana, helvetica, arial, sans-serif;
+}
+</style>
+<script type="text/javascript">
+	function cnvs_getCoordinates(e) {
+		x = e.clientX;
+		y = e.clientY;
+		document.getElementById("xycoordinates").innerHTML = "Coordinates: ("
+				+ x + "," + y + ")";
+	}
+
+	function cnvs_clearCoordinates() {
+		document.getElementById("xycoordinates").innerHTML = "";
+	}
+</script>
+</head>
+<body style="margin: 0px;">
+	<!-- 上面head里面的body块定义了下面的字体样式 -->
+	<!-- 下面是通过javascript在canvas上面绘制一个红色的背景和一个曲线和一个圆 -->
+	<canvas id="myCanvas" width="200" height="100"></canvas>
+	<script type="text/javascript">
+		var c = document.getElementById("myCanvas");
+		var cxt = c.getContext("2d");
+		cxt.fillStyle = "#FF0000";
+		cxt.fillRect(0, 0, 150, 75);
+	</script>
+	<script type="text/javascript">
+		var c = document.getElementById("myCanvas");
+		var cxt = c.getContext("2d");
+		cxt.moveTo(10, 10);
+		cxt.lineTo(150, 50);
+		cxt.lineTo(10, 50);
+		cxt.stroke();
+	</script>
+	<script type="text/javascript">
+		var c = document.getElementById("myCanvas");
+		var cxt = c.getContext("2d");
+		cxt.fillStyle = "blue";
+		cxt.beginPath();
+		cxt.arc(70, 18, 15, 0, Math.PI * 2, true);
+		cxt.closePath();
+		cxt.fill();
+	</script>
+	<p>把鼠标悬停在下面的矩形上可以看到坐标：</p>
+	<!-- 在div里面定义一个id，通过javascript来消费div里面的事件onmousemove()和onmouseout() -->
+	<!-- javascript可以放在body里面也可以放在head里面 -->
+	<div id="coordiv"
+		style="float: left; width: 199px; height: 99px; border: 1px solid green; background-color: #EDEDED;"
+		onmousemove="cnvs_getCoordinates(event)"
+		onmouseout="cnvs_clearCoordinates()"></div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<div id="xycoordinates"></div>
+	<br />
+	<p>使用您指定的颜色来绘制渐变背景：</p>
+
+	<canvas id="myCanvas1" width="200" height="100"
+		style="border:1px solid #c3c3c3;"> Your browser does not
+	support the canvas element. </canvas>
+
+	<script type="text/javascript">
+		var c = document.getElementById("myCanvas1");
+		var cxt = c.getContext("2d");
+		var grd = cxt.createLinearGradient(0, 0, 175, 50);
+		grd.addColorStop(0, "#FF0000");
+		grd.addColorStop(1, "#00FF00");
+		cxt.fillStyle = grd;
+		cxt.fillRect(0, 0, 175, 50);
+	</script>
+	<p>把一幅图像放置到画布上：</p>
+	<canvas id="myCanvas2" width="200" height="100"
+		style="border:1px solid #c3c3c3;"> Your browser does not
+	support the canvas element. </canvas>
+	<!-- 这里注意：路径引用和别处不一样，image后面需要用/而不是\ -->
+	<script type="text/javascript">
+		var c = document.getElementById("myCanvas2");
+		var cxt = c.getContext("2d");
+		var img = new Image()
+		img.src = "image/index.png"
+		cxt.drawImage(img, 0, 0);
+	</script>
+
+	<p>把 SVG直接嵌入 HTML页面</p>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+	<polygon points="100,10 40,180 190,60 10,60 160,180"
+		style="fill:red;stroke:blue;stroke-width:3;fill-rule:evenodd;" /> </svg>
+
+</body>
+</html>

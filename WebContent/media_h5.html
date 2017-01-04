@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Html的Media</title>
+</head>
+<body>
+	<!--  -->
+	<p>使用 Flash 来播放 SWF 视频</p>
+	<object width="400" height="40"
+		classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+		codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0">
+		<param name="SRC" value="bookmark.swf">
+		<embed src="media/bookmark.swf"></embed>
+	</object>
+	<!--  -->
+	<p>使用 embed 元素定义外部（非 HTML）内容的容器.能够显示嵌入网页中的 MP3 文件</p>
+	<embed height="100" width="100" src="media/horse.mp3" title="马叫声"></embed>
+	<p>
+		<b>注释：</b>浏览器可能需要安装插件以后，才能播放该文件。
+	</p>
+	<!--  -->
+	<object height="100" width="100" data="media/horse.mp3"></object>
+	<p>
+		<b>注释：</b>浏览器可能需要安装插件以后，才能播放该文件。
+	</p>
+
+	<!--  -->
+	<audio controls="controls"> <source src="media/song.ogg"
+		type="audio/ogg"> <source src="media/song.mp3"
+		type="audio/mpeg"> Your browser does not support the audio
+	element. </audio>
+	<!--  -->
+	<h2>链接到一段音乐</h2>
+	<p>
+		<a href="media/song.mp3">点击这里，播放音乐</a>
+	</p>
+	<!--  -->
+	<video width="320" height="240" controls="controls" autoplay="autoplay">
+	<source src="media/movie.ogg" type="video/ogg" /> <source
+		src="media/movie.mp4" type="video/mp4" /> <source
+		src="media/movie.webm" type="video/webm" /> <object
+		data="media/movie.mp4" width="320" height="240">
+		<embed width="320" height="240" src="media/movie.swf" />
+	</object> </video>
+	<!--  -->
+	<h2>点击该链接来播放这个对象</h2>
+
+	<a href="media/bookmark.swf">播放视频文件</a>
+</body>
+</html>

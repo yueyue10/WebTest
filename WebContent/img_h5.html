@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>图片资源</title>
+</head>
+<body background="image\bg.jpg">
+	<!-- 这里用a包围图片就可以将图片作为超链接 -->
+	<a href="https://www.baidu.com"> 这里的图片是超链接：<img border="0"
+		src="image\1.jpg" width="128" height="128" alt="Rubbit" />
+	</a>
+	<!-- 替换文本属性（Alt）:用来为图像定义一串预备的可替换的文本 -->
+	<br>
+	<p>
+		来自 W3School.com.cn 的图像： <img
+			src="http://www.w3school.com.cn/i/w3school_logo_white.gif" />
+	</p>
+	<!-- 设置图片的位置属性，默认的对齐方式是bottom  -->
+	<p>
+		图像 <img src="image\4.jpg" align="middle"> 在文本中
+	</p>
+	<p>
+		图像 <img src="image\4.jpg"> 在文本中
+	</p>
+	<!-- 设置浮动图像 -->
+	<p>
+		<img src="image\4.jpg" align="left"> 带有图像的一个段落。<br />图像的 align
+		属性设置为 "left"。<br />图像将浮动到文本的左侧。
+	</p>
+	<!-- 创建图像映射 -->
+	<img src="image\3.jpg" border="0" usemap="#zyjmap" alt="CutePics" />
+	<map name="zyjmap" id="zyjmap">
+
+		<area shape="rect" coords="0,0,175,200" href="firsth5.html"
+			target="_blank" alt="xiaolu" />
+		
+	</map>
+</body>
+</html>
