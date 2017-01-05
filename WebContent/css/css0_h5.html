@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 属性选择器</title>
+<!-- 下面分别应用的是以下选择器 -->
+<!-- [attribute] 	用于选取带有指定属性的元素。 -->
+<!-- [attribute=value]用于选取带有指定属性和值的元素。 -->
+<style type="text/css">
+[title] {
+	color: red;
+}
+
+[title=W3School] {
+	border: 5px solid blue;
+}
+
+a[target] {
+	background-color: yellow;
+}
+</style>
+</head>
+<body>
+	<!--下面的例子为带有 title 属性的所有元素设置样式：-->
+	<h3>下面的例子为带有 title 属性的所有元素设置样式：</h3>
+	<h5>可以应用样式：</h5>
+	<h2 title="Hello world">Hello world</h2>
+	<a title="W3School" href="http://w3school.com.cn">W3School</a>
+
+	<hr />
+
+	<h5>无法应用样式：</h5>
+	<h2>Hello world</h2>
+	<a href="http://w3school.com.cn">W3School</a>
+	<hr />
+	<br />
+	<!-- 下面的例子为 title="W3School" 的所有元素设置样式： -->
+	<h3>下面的例子为 title="W3School" 的所有元素设置样式：</h3>
+	<h5>可以应用样式：</h5>
+	<img title="W3School"
+		src="../image/eg_dragdrop_w3school.gif" />
+	<br />
+	<a title="W3School" href="http://w3school.com.cn">W3School</a>
+	<hr />
+
+	<h5>无法应用样式：</h5>
+	<p title="greeting">Hi!</p>
+	<a class="W3School" href="http://w3school.com.cn">W3School</a>
+	<!-- 为带有 target 属性的 <a> 元素设置样式： -->
+	<hr />
+	<!-- 下面的例子为 带有 target 属性的链接会得到黄色背景： -->
+	<h3>下面的例子为 带有 target 属性的链接会得到黄色背景：</h3>
+	<a href="http://www.w3school.com.cn">w3school.com.cn</a>
+	<a href="http://www.disney.com" target="_blank">disney.com</a>
+	<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+
+	<p>
+		<b>注释：</b>对于 IE8 及更早版本的浏览器中的 [<i>attribute</i>]，必须声明
+		<!DOCTYPE>
+		。
+	</p>
+
+</body>
+</html>

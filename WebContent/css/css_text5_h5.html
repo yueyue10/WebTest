@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 文本样式-字符转换</title>
+<!-- a:link的意思就是未被访问的链接 -->
+<!-- 上、下划线只能在开始的时候配置，在过程中或者过程后不能配置 -->
+<!-- 选择未访问、已访问、悬浮和活动链接，并设置它们的样式： -->
+<style type="text/css">
+a.nodecoration {
+	text-decoration: none;
+}
+
+a#dbline:LINK {
+	text-decoration: underline overline;
+}
+
+a:VISITED {
+	color: green;
+	text-decoration: underline overline;
+}
+
+a:link {
+	color: blue;
+}
+
+a:visited {
+	color: gray;
+}
+
+a:hover {
+	color: red;
+}
+
+a:active {
+	color: yellow;
+}
+
+h2.stricken {
+	text-decoration: line-through;
+}
+
+h2 {
+	text-decoration: underline overline;
+}
+</style>
+<script type="text/javascript">
+	function getcssstate() {
+		alert(document.getElementById('testlink1').state);//取颜色
+	}
+	function getcsscolor() {
+		alert(document.getElementById('testdiv').style.color);//取颜色
+	}
+	function getcsscolor1() {
+		alert(document.getElementById('testlink').style.color);//取颜色
+	}
+	function getcssbgcolor() {
+		alert(document.getElementById('testdiv').style.backgroundcolor);//取颜色
+	}
+</script>
+</head>
+<body>
+	<a href="#">这是一个链接!</a>
+	<br />
+	<br />
+	<a class="nodecoration" href="#">这是一个不带下划线的链接!</a>
+	<br />
+	<br />
+	<a href="#" id="dbline">这是一个未被访问过的、双线的链接!</a>
+	<br />
+	<br />
+	<a href="javascript:;" style="color: orange;" id="testlink"
+		onclick="getcsscolor1()">获取当前链接的颜色值！</a>
+	<br />
+	<br />
+	<a href="javascript:;" id="testlink1" onclick="getcssstate()">获取当前链接的状态值！</a>
+	<br />
+	<div id="testdiv" style="color: green; background-color: pink;">
+		<h3 align="center">这是在testdiv里的一个标题</h3>
+		<p align="left">这是在testdiv里的一个段落</p>
+		<a href="javascript:;" onclick="getcsscolor()">点击，获取testdiv的颜色值!</a> <br />
+		<a href="javascript:;" onclick="getcssbgcolor()">点击，获取testdiv的背景颜色值!</a>
+	</div>
+	<br />
+	<h2 class="stricken">对于给定的规则，所有 class 为 stricken 的 h2
+		元素都只有一个贯穿线装饰，而没有下划线和上划线，因为 text-decoration 值会替换而不是累积起来。</h2>
+</body>
+</html>

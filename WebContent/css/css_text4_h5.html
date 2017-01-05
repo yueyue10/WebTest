@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 文本样式-字符转换</title>
+<style type="text/css">
+h1 {
+	text-transform: uppercase
+}
+
+p.uppercase {
+	text-transform: uppercase
+}
+
+p.lowercase {
+	text-transform: lowercase
+}
+
+p.capitalize {
+	text-transform: capitalize
+}
+</style>
+</head>
+<body>
+	<h5>默认值 none 对文本不做任何改动，将使用源文档中的原有大小写。顾名思义，uppercase 和 lowercase
+		将文本转换为全大写和全小写字符。最后，capitalize 只对每个单词的首字母大写。</h5>
+	<h1>This Is An H1 Element</h1>
+	<p class="uppercase">This is some text in a paragraph.</p>
+	<p class="lowercase">This is some text in a paragraph.</p>
+	<p class="capitalize">This is some text in a paragraph.</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 处理空白符</title>
+<style type="text/css">
+p.pre {
+	white-space: pre;
+}
+p.pre_wrap {white-space: pre-wrap;}
+p.pre_line {white-space: pre-line;}
+p {white-space: normal;}
+</style>
+</head>
+<body>
+	<h4>设置white-space为pre时，显示：</h4>
+	<p class="pre">This     paragraph has    many
+    spaces           in it.</p>
+    
+	<h4>设置white-space为pre_wrap时，显示：</h4>
+	<p class="pre_wrap">This     paragraph has    many
+    spaces           in it.</p>
+    
+	<h4>设置white-space为pre_line时，显示：</h4>
+	<p class="pre_line">This     paragraph has    many
+    spaces           in it.</p>
+    
+    <h4>设置white-space为normal时，显示：</h4>
+	<p>This     paragraph has    many
+    spaces           in it.</p>
+    
+<p>注释：<br/>1.当 white-space 属性设置为 normal 时，会合并所有的空白符，并忽略换行符。</p>
+<p>2.上面的规则告诉浏览器按照平常的做法去处理：丢掉多余的空白符。如果给定这个值，换行字符（回车）会转换为空格，一行中多个空格的序列也会转换为一个空格。</p>
+<p>3.格式化也会将格式清除</p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 文本继承</title>
+<style type="text/css">
+div#outer {
+	width: 500px;
+}
+
+div#inner {
+	text-indent: 10%;
+}
+
+p {
+	width: 200px;
+}
+</style>
+</head>
+<body>
+	<h3>text-indent 属性可以继承，请考虑如下标记：</h3>
+	<p>我是一个段落 我是一个段落 我是一个段落 我是一个段落</p>
+	<div id="outer">
+		以下标记中的段落也会缩进 50 像素，这是因为这个段落继承了 id 为 inner 的 div 元素的缩进值。
+		<div id="inner">
+			some text. some text. some text.
+			<p>this is a paragragh.</p>
+		</div>
+	</div>
+</body>
+</html>

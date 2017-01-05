@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 使用像素来定位背景图像</title>
+<!-- 如果需要在页面上对背景图像进行平铺，可以使用 background-repeat 属性。
+属性值 repeat 导致图像在水平垂直方向上都平铺，就像以往背景图像的通常做法一样。
+repeat-x 和 repeat-y 分别导致图像只在水平或垂直方向上重复，no-repeat 则不允许图像在任何方向上平铺。
+默认地，背景图像将从一个元素的左上角开始。请看下面的例子： -->
+<style type="text/css">
+body {
+	background-image: url('../image/eg_bg_03.gif');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: 50px 100px;
+}
+</style>
+</head>
+<body>
+	<p>
+		<b>提示：</b>您需要把 background-attachment 属性设置为 "fixed"，才能保证该属性在 Firefox 和
+		Opera 中正常工作。
+	</p>
+</body>
+</html>

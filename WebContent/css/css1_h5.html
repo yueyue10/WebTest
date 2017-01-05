@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 属性选择器</title>
+<!-- 下面分别应用的是以下选择器 -->
+<!-- [attribute~=value] 用于选取属性值中包含指定词汇的元素。 -->
+<!-- [attribute|=value] 用于选取带有以指定值开头的属性值的元素，该值必须是整个单词。 -->
+<!-- [attribute^=value] 匹配属性值以指定值开头的每个元素。 -->
+<!-- [attribute*=value] 匹配属性值中包含指定值的每个元素。 -->
+<style type="text/css">
+[title~=hello] {
+	color: red;
+}
+
+[lang|=en] {
+	color: red;
+}
+
+div[class^="test"] {
+	background: #ffff00;
+}
+
+div[class$="test"] {
+	background: #ffff00;
+}
+
+div[class*="test"] {
+	background: #ffff00;
+}
+
+input[type="text"] {
+	width: 150px;
+	display: block;
+	margin-bottom: 10px;
+	background-color: yellow;
+	font-family: Verdana, Arial;
+}
+
+input[type="button"] {
+	width: 120px;
+	margin-left: 35px;
+	display: block;
+	font-family: Verdana, Arial;
+}
+</style>
+</head>
+<body>
+	<!-- 下面的例子为包含指定值的 title 属性的所有元素设置样式。适用于由空格分隔的属性值： -->
+	<h3>下面的例子为包含指定值的 title 属性的所有元素设置样式。适用于由空格分隔的属性值：</h3>
+	<h5>可以应用样式：</h5>
+	<h2 title="hello world">Hello world</h2>
+	<p title="student hello">Hello W3School students!
+	</h1>
+	<hr />
+	<h5>无法应用样式：</h5>
+	<h2 title="world">Hello world</h2>
+	<p title="student">Hello W3School students!</p>
+
+	<!-- 下面的例子为带有包含指定值的 lang 属性的所有元素设置样式。适用于由连字符分隔的属性值： -->
+	<hr />
+	<h3>下面的例子为带有包含指定值的 lang 属性的所有元素设置样式。适用于由连字符分隔的属性值：</h3>
+	<h5>可以应用样式：</h5>
+	<p lang="en">Hello!</p>
+	<p lang="en-us">Hi!</p>
+	<hr />
+
+	<h5>无法应用样式：</h5>
+	<p lang="us">Hi!</p>
+	<p lang="zh">Hao!</p>
+
+	<!-- 下面的例子为设置 class 属性值以 "test" 开头的所有 div 元素的背景色： -->
+	<hr />
+	<h3>下面的例子为设置 class 属性值以 "test" 开头的所有 div 元素的背景色：</h3>
+	<div class="first_test">第一个 div 元素。</div>
+	<div class="second">第二个 div 元素。</div>
+	<div class="test">第三个 div 元素。</div>
+	<p class="test">这是段落中的文本。</p>
+
+	<!-- 下面的例子为设置 class 属性值以 "test" 结尾的所有 div 元素的背景色： -->
+	<hr />
+	<h3>下面的例子为设置 class 属性值以 "test" 结尾的所有 div 元素的背景色：</h3>
+	<div class="first_test">第一个 div 元素。</div>
+	<div class="second">第二个 div 元素。</div>
+	<div class="test">第三个 div 元素。</div>
+	<p class="test">这是段落中的文本。</p>
+
+	<!-- 下面的例子设置 class 属性值包含 "test" 的所有 div 元素的背景色： -->
+	<hr />
+	<h3>下面的例子为设置 class 属性值包含 "test" 的所有 div 元素的背景色：</h3>
+	<div class="first_test">第一个 div 元素。</div>
+	<div class="second">第二个 div 元素。</div>
+	<div class="test">第三个 div 元素。</div>
+	<p class="test">这是段落中的文本。</p>
+
+	<!-- 属性选择器在为不带有 class 或 id 的表单设置样式时特别有用： -->
+	<hr />
+	<h3>属性选择器在为不带有 class 或 id 的表单设置样式时特别有用</h3>
+	<form name="input" action="" method="get">
+		<input type="text" name="Name" value="Bill" size="20"> <input
+			type="text" name="Name" value="Gates" size="20"> <input
+			type="button" value="Example ButtonAAA">
+	</form>
+
+</body>
+</html>
