@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 轮廓</title>
+<style type="text/css">
+p {
+	border: red solid thin;
+	outline-style: dotted;
+	outline-color: green;
+}
+
+p.one {
+	border: red solid thin;
+	outline-style: solid;
+	outline-width: thin;
+}
+
+p.one1 {
+	border: red solid thin;
+	outline-style: dotted;
+	outline-width: thin;
+}
+
+p.two {
+	border: red solid thin;
+	outline-style: dotted;
+	outline-width: medium;
+}
+
+p.three {
+	border: red solid thin;
+	outline-style: dotted;
+	outline-width: 5px;
+}
+
+p.normal {
+	font-size: 85%;
+	outline: none;
+	border: none;
+}
+</style>
+</head>
+<body>
+	<p class="normal">轮廓属性：outline-color: green;</p>
+	<p>This is some text in a paragraph.</p>
+	<p class="normal">轮廓属性：outline-style: solid; outline-width: thin;</p>
+	<p class="one">This is some text in a paragraph.</p>
+	<p class="normal">轮廓属性：outline-style: dotted; outline-width: thin;</p>
+	<p class="one1">This is some text in a paragraph.</p>
+	<p class="normal">轮廓属性：outline-style: dotted; outline-width:
+		medium;</p>
+	<p class="two">This is some text in a paragraph.</p>
+	<p class="normal">轮廓属性：outline-style: dotted; outline-width: 5px;</p>
+	<p class="three">This is some text in a paragraph.</p>
+	<br />
+	<p class="normal">
+		<b>注释：</b>只有在规定了 !DOCTYPE 时，Internet Explorer 8 （以及更高版本） 才支持
+		outline-color 属性。
+	</p>
+</body>
+</html>

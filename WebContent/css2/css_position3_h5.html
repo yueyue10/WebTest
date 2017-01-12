@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS定位</title>
+<style type="text/css">
+img.clip {
+	position: absolute;
+	clip: rect(0px, 50px, 200px, 0px)
+}
+
+img.top {
+	vertical-align: text-top
+}
+
+img.bottom {
+	vertical-align: text-bottom
+}
+
+img.x {
+	position: absolute;
+	left: 0px;
+	top: 450px;
+	z-index: -1
+}
+
+img.zx {
+	position: absolute;
+	left:10px;
+	top: 600px;
+	z-index: 1
+}
+</style>
+</head>
+<body>
+	<p>**设置元素的形状:此元素被剪裁到这个形状内，并显示出来。clip 属性剪切了一幅图像：</p>
+	<p>
+		<img class="clip" border="0" src="../image/eg_bookasp.gif" width="120"
+			height="151">
+	</p>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<p>**垂直排列图象 本例演示如何在文本中垂直排列图象:</p>
+	<p>
+		这是一幅<img class="top" border="0" src="../image/eg_cute.gif" />位于段落中的图像。
+	</p>
+
+	<p>
+		这是一幅<img class="bottom" border="0" src="../image/eg_cute.gif" />位于段落中的图像。
+	</p>
+
+	<h1>这是一个标题</h1>
+	<img class="x" src="../image/eg_mouse.jpg" />
+	<p>**默认的 z-index 是 0。Z-index -1 拥有更低的优先级。</p>
+
+	<h1>这是一个标题</h1>
+	<img class="zx" src="../image/eg_mouse.jpg" />
+	<p>**默认的 z-index 是 0。Z-index 1 拥有更高的优先级。</p>
+</body>
+</html>

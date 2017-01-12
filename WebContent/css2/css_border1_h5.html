@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 边框</title>
+<style type="text/css">
+a:link img {
+	border-style: outset;
+}
+
+p.aside {
+	border-style: solid dotted dashed double;
+}
+
+p.mborder {
+	border-style: solid;
+	border-width: 15px 5px;
+}
+
+p.normal {
+	font-size: 85%;
+}
+
+a:link,a:visited {
+	border-style: solid;
+	border-width: 5px;
+	border-color: transparent;
+}
+
+a:hover {
+	border-color: gray;
+}
+</style>
+</head>
+<body>
+	<p class="normal">带有背景的链接：</p>
+	<a href="#" style="background-image: url(../image/eg_bg_03.gif);">带有背景的链接！</a>
+	<br />
+
+	<p class="normal">您可以为把一幅图片的边框定义为 outset，使之看上去像是“凸起按钮”：</p>
+	<p class="normal">a标签里面包含了img标签：</p>
+	<a class="" href="#"> <img alt="hrefbg" src="../image/4.jpg" />
+	</a>
+	<p class="aside">一个边框定义多个样式</p>
+	<p class="mborder">一个边框的多个边框的宽度</p>
+
+	<p class="normal">透明边框：</p>
+	<a href="#">AAA</a>
+	<a href="#">BBB</a>
+	<a href="#">CCC</a>
+</body>
+</html>

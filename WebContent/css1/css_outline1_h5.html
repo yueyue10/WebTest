@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 轮廓</title>
+<style type="text/css">
+p {
+	border: red solid thin;
+}
+
+p.normal {
+	border: none;
+	font-size: 85%;
+}
+
+p.dotted {
+	outline-style: dotted
+}
+
+p.dashed {
+	outline-style: dashed
+}
+
+p.solid {
+	outline-style: solid
+}
+
+p.double {
+	outline-style: double
+}
+
+p.groove {
+	outline-style: groove
+}
+
+p.ridge {
+	outline-style: ridge
+}
+
+p.inset {
+	outline-style: inset
+}
+
+p.outset {
+	outline-style: outset
+}
+</style>
+</head>
+<body>
+	<p class="normal">轮廓属性为：outline-style: dotted</p>
+	<p class="dotted">A dotted outline</p>
+	<p class="normal">轮廓属性为：outline-style: dashed</p>
+	<p class="dashed">A dashed outline</p>
+	<p class="solid">A solid outline</p>
+	<p class="double">A double outline</p>
+	<p class="groove">A groove outline</p>
+	<p class="ridge">A ridge outline</p>
+	<p class="inset">An inset outline</p>
+	<p class="outset">An outset outline</p>
+
+	<p>
+		<b>注释：</b>只有在规定了 !DOCTYPE 时，Internet Explorer 8 （以及更高版本） 才支持
+		outline-style 属性。
+	</p>
+</body>
+</html>
