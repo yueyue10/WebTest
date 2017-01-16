@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 分类 (Classification)</title>
+<style type="text/css">
+p {
+	display: inline
+}
+
+div {
+	display: none
+}
+
+span {
+	display: block
+}
+
+h1.visible {
+	visibility: visible
+}
+
+h1.invisible {
+	visibility: hidden
+}
+
+tr.coll {
+	visibility: collapse
+}
+
+img {
+	float: left;
+	clear: both;
+}
+</style>
+</head>
+<body>
+	<!-- 把元素显示为内联元素 -->
+	<h5>把元素显示为内联元素使用属性display: inline</h5>
+	<p>本例中的样式表把段落元素设置为内联元素。</p>
+
+	<p>而 div 元素不会显示出来！</p>
+
+	<div>div 元素在这里,没有显示出来！</div>
+	<br />
+	<br />
+	<br />
+	<hr />
+	<!-- 把元素显示为块级元素 -->
+	<h5>把元素显示为块级元素使用属性display: block</h5>
+	<span>本例中的样式表把 span 元素设置为块级元素。</span>
+	<span>两个 span 元素之间产生了一个换行行为。</span>
+	<br />
+	<hr />
+	<!-- float 属性的简单应用 -->
+	<br />
+	<a href="../css2/css_position4_h5.html">float 属性的简单应用</a>
+	<br />
+	<br />
+	<hr />
+	<!-- 创建水平菜单 -->
+	<br />
+	<a href="../css2/css_position4_h5.html">使用具有一栏超链接的浮动来创建水平菜单</a>
+	<br />
+	<br />
+	<hr />
+	<!-- 使元素不可见 -->
+	<br />
+	<h1 class="visible">这是可见的标题</h1>
+	<h1 class="invisible">这是不可见的标题</h1>
+	<p>
+		<b>注释：</b>使元素不可见使用属性：visibility: hidden
+	</p>
+	<hr />
+	<!-- 使表格元素叠加(隐藏) -->
+	<table border="1">
+		<tr>
+			<td>Adams</td>
+			<td>John</td>
+		</tr>
+		<tr class="coll">
+			<td>Bush</td>
+			<td>George</td>
+		</tr>
+	</table>
+	<p>
+		<b>注释：</b>使表格元素不可见使用属性：visibility: collapse
+	</p>
+	<hr />
+	<!-- 改变光标样式 -->
+	<h5>请把鼠标移动到单词上，可以看到鼠标指针发生变化：</h5>
+	<span style="cursor: auto"> Auto</span>
+	<br />
+	<span style="cursor: crosshair"> Crosshair</span>
+	<br />
+	<span style="cursor: default"> Default</span>
+	<br />
+	<span style="cursor: pointer"> Pointer</span>
+	<br />
+	<span style="cursor: move"> Move</span>
+	<br />
+	<span style="cursor: e-resize"> e-resize</span>
+	<br />
+	<span style="cursor: ne-resize"> ne-resize</span>
+	<br />
+	<span style="cursor: nw-resize"> nw-resize</span>
+	<br />
+	<span style="cursor: n-resize"> n-resize</span>
+	<br />
+	<span style="cursor: se-resize"> se-resize</span>
+	<br />
+	<span style="cursor: sw-resize"> sw-resize</span>
+	<br />
+	<span style="cursor: s-resize"> s-resize</span>
+	<br />
+	<span style="cursor: w-resize"> w-resize</span>
+	<br />
+	<span style="cursor: text"> text</span>
+	<br />
+	<span style="cursor: wait"> wait</span>
+	<br />
+	<span style="cursor: help"> help</span>
+	<p>
+		<b>注释：</b>改变光标样式
+	</p>
+	<hr />
+	<!-- 使用清除元素侧面的浮动元素 -->
+	<br />
+	<img src="../image/eg_smile.gif" />
+	<img src="../image/eg_smile.gif" />
+	<p>
+		<b>注释：</b>使用清除元素侧面的浮动元素使用属性：clear: both;正常情况下第二张图片在第一张图片的左边。
+	</p>
+	<hr />
+</body>
+</html>

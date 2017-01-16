@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 水平对齐</title>
+<style>
+.center {
+	margin: auto;
+	width: 70%;
+	background-color: #b0e0e6;
+}
+
+.right {
+	position: absolute;
+	right: 0px;
+	width: 300px;
+	background-color: #b0e0e6;
+}
+
+.float_right {
+	float: right;
+	width: 300px;
+	background-color: #b0e0e6;
+}
+</style>
+</head>
+<body>
+	<!-- 使用 margin 属性来水平对齐: -->
+	<p>使用 margin 属性来水平对齐:</p>
+	<div class="center">
+		<p>这是一个段落。这是一个段落。这是一个段落。这是一个段落。这是一个段落。</p>
+		<p>这是一个段落。这是一个段落。这是一个段落。这是一个段落。这是一个段落。</p>
+	</div>
+	<p>
+		<b>注释：</b>除非已经声明了 !DOCTYPE，否则使用 margin:auto 在 IE8 以及更早的版本中是无效的。
+	</p>
+
+	<hr />
+	<!-- 使用 position 属性进行左和右对齐 -->
+	<p>使用 position 属性进行左和右对齐</p>
+	<div class="right">
+		<p>这是一个段落。这是一个段落。这是一个段落。这是一个段落。这是一个段落。</p>
+		<p>这是一个段落。这是一个段落。这是一个段落。这是一个段落。这是一个段落。</p>
+	</div>
+	<p>
+		<b>注释：</b>绝对定位元素会被从正常流中删除，并且能够交叠元素。
+	</p>
+	<br />
+	<br />
+	<br />
+	<br />
+
+	<hr />
+	<!-- 使用 position 属性进行左和右对齐 -->
+	<p>使用 float 属性来进行左和右对齐 对齐元素的另一种方法是使用 float 属性：</p>
+	<div class="float_right">
+		<p>这是一个段落。这是一个段落。这是一个段落。这是一个段落。这是一个段落。</p>
+		<p>这是一个段落。这是一个段落。这是一个段落。这是一个段落。这是一个段落。</p>
+	</div>
+</body>
+</html>

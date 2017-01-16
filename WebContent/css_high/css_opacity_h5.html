@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 图像透明度</title>
+<style>
+img {
+	opacity: 0.4;
+	filter: alpha(opacity =40); /* For IE8 and earlier */
+}
+
+img.hover:hover {
+	opacity: 1.0;
+	filter: alpha(opacity =100); /* For IE8 and earlier */
+}
+
+div.background {
+	width: 400px;
+	height: 266px;
+	margin: 15px;
+	background: url('../image/tulip_peach_blossom.jpg') no-repeat;
+	border: 1px solid black;
+}
+
+div.transbox {
+	width: 338px;
+	height: 204px;
+	margin: 30px;
+	padding: 0;
+	background-color: #ffffff;
+	border: 1px solid black;
+	/* for IE */
+	filter: alpha(opacity =     60);
+	/* CSS3 standard */
+	opacity: 0.6;
+}
+
+div.transbox p {
+	margin: 30px 40px;
+	color: #000000;
+	font: bold 12px Verdana, Geneva, sans-serif;
+	line-height: 1.5;
+}
+</style>
+</head>
+<body>
+	<!-- 常规透明图像 -->
+	<h5>常规透明图像</h5>
+	<img src="../image/tulip_peach_blossom.jpg" alt="Peach Blossom" />
+	<hr />
+	<!-- 图像透明度 - Hover 效果 -->
+	<h5>图像透明度 - Hover 效果</h5>
+
+	<img class="hover" src="../image/tulip_peach_blossom.jpg"
+		alt="Peach Blossom" />
+	<p>
+		<b>注释：</b>在 IE 中，必须添加 DOCTYPE ，这样才能将 :hover 选择器用于除了a 之外的其它元素。
+	</p>
+	<hr />
+	<!-- 透明框中的文本 -->
+	<h5>透明框中的文本</h5>
+	<div class="background">
+		<div class="transbox">
+			<p>This is some text that is placed in the transparent box. This
+				is some text that is placed in the transparent box. This is some
+				text that is placed in the transparent box. This is some text that
+				is placed in the transparent box. This is some text that is placed
+				in the transparent box.</p>
+		</div>
+	</div>
+</body>
+</html>

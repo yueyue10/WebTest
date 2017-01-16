@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 导航条</title>
+<style>
+ul.nostyle {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a.block {
+	display: block;
+	width: 100px;
+	background-color: #dddddd;
+}
+
+li.horzontal {
+	display: inline;
+}
+
+ul.nostyle1 {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+li.float {
+	float: left;
+}
+</style>
+</head>
+<body>
+	<!-- 导航栏 = 链接列表-->
+	<p>导航栏 = 链接列表</p>
+	<ul>
+		<li><a href="#home">Home</a></li>
+		<li><a href="#news">News</a></li>
+		<li><a href="#contact">Contact</a></li>
+		<li><a href="#about">About</a></li>
+	</ul>
+	<p>
+		<b>注释：</b>在我们的例子中，将用标准的 HTML 列表来构建导航栏。 导航栏基本上是一个链接列表，因此使用 ul和 li
+		元素是非常合适的：
+	<p />
+	<hr />
+	<!-- 从列表中去掉圆点和外边距-->
+	<p>从列表中去掉圆点和外边距：</p>
+	<ul class="nostyle">
+		<li><a href="#home">Home</a></li>
+		<li><a href="#news">News</a></li>
+		<li><a href="#contact">Contact</a></li>
+		<li><a href="#about">About</a></li>
+	</ul>
+	<hr />
+	<!-- 垂直导航栏：-->
+	<p>垂直导航栏：</p>
+	<ul class="nostyle">
+		<li><a class="block" href="#home">Home</a></li>
+		<li><a class="block" href="#news">News</a></li>
+		<li><a class="block" href="#contact">Contact</a></li>
+		<li><a class="block" href="#about">About</a></li>
+	</ul>
+	<p>请注意，全部链接区域都是可点击的，不仅仅是文本。</p>
+	<hr />
+	<!-- 水平导航栏-->
+	<p>水平导航栏-行内列表项:display: inline;</p>
+	<ul class="nostyle">
+		<li class="horzontal"><a href="#home">Home</a></li>
+		<li class="horzontal"><a href="#news">News</a></li>
+		<li class="horzontal"><a href="#contact">Contact</a></li>
+		<li class="horzontal"><a href="#about">About</a></li>
+	</ul>
+	<p>
+		<b>注释：</b>有两种创建水平导航栏的方法。使用行内或浮动列表项。
+		两种方法都不错，但是如果您希望链接拥有相同的尺寸，就必须使用浮动方法。
+	<p />
+	<hr/>
+	<!-- 水平导航栏-->
+	<p>水平导航栏-行内列表项:float:left;</p>
+	<ul class="nostyle1">
+		<li class="float"><a class="block" href="#home">Home</a></li>
+		<li class="float"><a class="block" href="#news">News</a></li>
+		<li class="float"><a class="block" href="#cont">Contact</a></li>
+		<li class="float"><a class="block" href="#about">About</a></li>
+	</ul>
+	<p>
+		<b>注释：</b>为了让所有链接拥有相等的宽度，浮动 li 元素并规定 a 元素的宽度：
+	<p />
+</body>
+</html>
