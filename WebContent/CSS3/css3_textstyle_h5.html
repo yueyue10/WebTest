@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS3 文本效果</title>
+<style>
+h1 {
+	text-shadow: 5px 5px 5px #FF0000;
+}
+
+p.test {
+	width: 11em;
+	border: 1px solid #000000;
+	word-wrap: break-word;
+}
+
+p.normal {
+	width: 11em;
+	border: 1px solid #000000;
+}
+</style>
+</head>
+<body>
+	<p>下面的效果需要在其他浏览器查看</p>
+	<h1>文本阴影效果！</h1>
+	<hr />
+	<p>CSS3 自动换行</p>
+	<p class="test">This paragraph contains a very long word:
+		thisisaveryveryveryveryveryverylongword. The long word will break and
+		wrap to the next line.</p>
+	<p>
+		<b>注释：</b>在 CSS3 中，word-wrap 属性允许您允许文本强制文本进行换行 - 即使这意味着会对单词进行拆分：
+	</p>
+	<p class="normal">This paragraph contains a very long word:
+		thisisaveryveryveryveryveryverylongword. The long word will break and
+		wrap to the next line.</p>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>3D 转换</title>
+<style>
+.animated_div {
+	width: 60px;
+	height: 40px;
+	color: #ffffff;
+	position: relative;
+	font-weight: bold;
+	padding: 20px 10px 0px 10px;
+	float: left;
+	margin: 20px;
+	margin-right: 50px;
+	border: 1px solid #888888;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font: 12px Verdana, Arial, Helvetica, sans-serif;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#rotate1,#rotatey1 {
+	border: 1px solid #000000;
+	background: red;
+	margin: 10px;
+	opacity: 0.7;
+}
+</style>
+
+<script>
+<!--
+	var x, y, n = 0, ny = 0, rotINT, rotYINT
+	function rotateDIV() {
+		x = document.getElementById("rotate1")
+		clearInterval(rotINT)
+		rotINT = setInterval("startRotate()", 10)
+	}
+	function rotateYDIV() {
+		y = document.getElementById("rotatey1")
+		clearInterval(rotYINT)
+		rotYINT = setInterval("startYRotate()", 10)
+	}
+	function startRotate() {
+		n = n + 1
+		x.style.transform = "rotate(" + n + "deg)"
+		x.style.webkitTransform = "rotate(" + n + "deg)"
+		x.style.OTransform = "rotate(" + n + "deg)"
+		x.style.MozTransform = "rotate(" + n + "deg)"
+		if (n == 180 || n == 360) {
+			clearInterval(rotINT)
+			if (n == 360) {
+				n = 0
+			}
+		}
+	}
+	function startYRotate() {
+		ny = ny + 1
+		y.style.transform = "rotateY(" + ny + "deg)"
+		y.style.webkitTransform = "rotateY(" + ny + "deg)"
+		y.style.OTransform = "rotateY(" + ny + "deg)"
+		y.style.MozTransform = "rotateY(" + ny + "deg)"
+		if (ny == 180 || ny >= 360) {
+			clearInterval(rotYINT)
+			if (ny >= 360) {
+				ny = 0
+			}
+		}
+	}
+//-->
+</script>
+
+</head>
+<body>
+	<div style="height: 220px;">
+		<h2>3D 转换</h2>
+
+		<p>CSS3 允许您使用 3D 转换来对元素进行格式化。</p>
+
+		<p>在本章中，您将学到其中的一些 3D 转换方法：</p>
+
+		<ul>
+			<li>rotateX()</li>
+			<li>rotateY()</li>
+		</ul>
+
+		<p>点击下面的元素，来查看 2D 转换与 3D 转换之间的不同之处：</p>
+
+		<p onClick="rotateDIV()" id="rotate1" class="animated_div">2D 旋转</p>
+		<p onClick="rotateYDIV()" id="rotatey1" class="animated_div">3D 旋转</p>
+	</div>
+</body>
+</html>

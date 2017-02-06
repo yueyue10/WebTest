@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JavaScript对html的操作</title>
+</head>
+<body>
+	<!-- JavaScript 能够直接写入 HTML 输出流中： -->
+	<p>
+		<b>注释：</b>JavaScript 能够直接写入 HTML 输出流中：
+	</p>
+
+	<script>
+		document.write("<h1>This is a heading</h1>");
+		document.write("<p>This is a paragraph.</p>");
+	</script>
+	<!-- JavaScript：对事件作出反应: -->
+	<hr />
+	<p>
+		<b>注释：</b>JavaScript：对事件作出反应:
+	</p>
+
+	<button type="button" onclick="alert('Welcome!')">点击这里</button>
+	<!-- JavaScript 能改变 HTML 元素的内容。 -->
+	<hr />
+	<p>
+		<b>注释：</b>JavaScript 能改变 HTML 元素的内容。
+	</p>
+	<p id="demo1">JavaScript 能改变 HTML 元素的内容。</p>
+	<script>
+		function myFunction1() {
+			x = document.getElementById("demo1"); // 找到元素
+			x.innerHTML = "Hello JavaScript!"; // 改变内容
+		}
+	</script>
+
+	<button type="button" onclick="myFunction1()">点击这里</button>
+	<!-- JavaScript：改变 HTML 图像. -->
+	<hr />
+	<p>
+		<b>注释：</b>JavaScript：改变 HTML 图像.
+	</p>
+	<script>
+		function changeImage() {
+			element = document.getElementById('myimage')
+			if (element.src.match("bulbon")) {
+				element.src = "../image/eg_bulboff.gif";
+			} else {
+				element.src = "../image/eg_bulbon.gif";
+			}
+		}
+	</script>
+	<img id="myimage" onclick="changeImage()" src="../image/eg_bulboff.gif">
+
+	<p>点击灯泡来点亮或熄灭这盏灯</p>
+	<!-- JavaScript：改变 HTML 样式. -->
+	<hr />
+	<p>
+		<b>注释：</b>JavaScript：改变 HTML 样式.
+	</p>
+	<p id="demo2">JavaScript 能改变 HTML 元素的样式。</p>
+
+	<script>
+		function myFunction2() {
+			x = document.getElementById("demo2") // 找到元素
+			x.style.color = "#ff0000"; // 改变样式
+		}
+	</script>
+
+	<button type="button" onclick="myFunction2()">点击这里</button>
+	<!-- JavaScript：验证输入. -->
+	<hr />
+	<p>
+		<b>注释：</b>JavaScript：验证输入.
+	</p>
+	<input id="demo3" type="text">
+
+	<script>
+		function myFunction3() {
+			var x = document.getElementById("demo3").value;
+			if (x == "" || isNaN(x)) {
+				alert("Not Numeric");
+			}
+		}
+	</script>
+
+	<button type="button" onclick="myFunction3()">点击这里</button>
+
+</body>
+</html>

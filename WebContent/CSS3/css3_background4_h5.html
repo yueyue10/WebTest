@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS3 背景</title>
+<style>
+div {
+	border: 1px solid black;
+	padding: 35px;
+	background-image: url('../image/bg_flower.gif');
+	background-repeat: no-repeat;
+	background-position: left;
+}
+
+#div1 {
+	background-origin: border-box;
+}
+
+#div2 {
+	background-origin: content-box;
+}
+</style>
+</head>
+<body>
+	<p>background-origin 属性规定背景图片的定位区域。</p>
+	<p>background-origin:border-box:这个属性是以边框为参考</p>
+	<div id="div1">
+		这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。
+	</div>
+
+	<p>background-origin:content-box:这个属性是以内容为参考</p>
+	<div id="div2">
+		这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。
+	</div>
+</body>
+</html>

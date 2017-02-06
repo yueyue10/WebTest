@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS 选择器</title>
+<style>
+p ~ul {
+	background: blue;
+}
+
+[class^="test1"] {
+	background: green;
+}
+
+div[class^="test"] {
+	background: yellow;
+}
+</style>
+</head>
+<body>
+	<!-- 第一个实例 -->
+	<div>一个 div 元素。</div>
+	<ul>
+		<li>咖啡</li>
+		<li>牛奶</li>
+		<li>茶</li>
+	</ul>
+
+	<p>这是带有p标签的段落</p>
+	<ul>
+		<li>咖啡</li>
+		<li>牛奶</li>
+		<li>茶</li>
+	</ul>
+
+	<h2>这是h2标题</h2>
+	<ul>
+		<li>咖啡</li>
+		<li>牛奶</li>
+		<li>茶</li>
+	</ul>
+	<p>
+		<b>注释：</b>p~ul的意思是：如果在ul上面有p则符合条件.
+	</p>
+	<!-- 第二个实例 -->
+	<hr />
+	<p>所有以test1开头的标签
+	<div class="first_test">第一个 div 元素。first_test标签</div>
+	<div class="testa">第二个 div 元素。testa标签</div>
+	<div class="test1">第三个 div 元素。test1标签</div>
+	<p class="test1">这是段落中的文本。test1标签</p>
+	<hr />
+	<div class="first_test">第一个 div 元素。first_test标签</div>
+	<div class="second">第二个 div 元素。second标签</div>
+	<div class="test">第三个 div 元素。test标签</div>
+	<p class="test">这是段落中的文本。test标签</p>
+</body>
+</html>

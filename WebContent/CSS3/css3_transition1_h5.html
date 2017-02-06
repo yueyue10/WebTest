@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS3 过渡</title>
+<style>
+div {
+	width: 100px;
+	height: 100px;
+	background: yellow;
+	transition: width 2s;
+	-moz-transition: width 2s; /* Firefox 4 */
+	-webkit-transition: width 2s; /* Safari and Chrome */
+	-o-transition: width 2s; /* Opera */
+}
+
+div:hover {
+	width: 300px;
+}
+
+div.two {
+	width: 100px;
+	height: 100px;
+	background: yellow;
+	transition: width 2s, height 2s;
+	-moz-transition: width 2s, height 2s, -moz-transform 2s;
+	/* Firefox 4 */
+	-webkit-transition: width 2s, height 2s, -webkit-transform 2s;
+	/* Safari and Chrome */
+	-o-transition: width 2s, height 2s, -o-transform 2s; /* Opera */
+}
+
+div.two:hover {
+	width: 200px;
+	height: 200px;
+	transform: rotate(180deg);
+	-moz-transform: rotate(180deg); /* Firefox 4 */
+	-webkit-transform: rotate(180deg); /* Safari and Chrome */
+	-o-transform: rotate(180deg); /* Opera */
+}
+</style>
+</head>
+<body>
+	<div></div>
+
+	<p>请把鼠标指针放到黄色的 div 元素上，来查看过渡效果。</p>
+
+	<p>
+		<b>注释：</b>本例在 Internet Explorer 中无效。
+	</p>
+	<div class="two">请把鼠标指针放到黄色的 div 元素上，来查看过渡效果。</div>
+
+	<p>
+		<b>注释：</b>本例在 Internet Explorer 中无效。
+	</p>
+</body>
+</html>

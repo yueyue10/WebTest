@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS3 实例</title>
+<style>
+div {
+	width: 100px;
+	height: 75px;
+	background-color: yellow;
+	border: 1px solid black;
+}
+
+div#div2 {
+	transform: rotate(30deg);
+	-ms-transform: rotate(30deg); /* IE 9 */
+	-moz-transform: rotate(30deg); /* Firefox */
+	-webkit-transform: rotate(30deg); /* Safari and Chrome */
+	-o-transform: rotate(30deg); /* Opera */
+}
+</style>
+</head>
+<body>
+
+	<div style="font-size: 85%">你好。这是一个 div 元素。</div>
+
+	<div id="div2" style="font-size: 85%">你好。这是一个 div 元素。</div>
+</body>
+</html>
