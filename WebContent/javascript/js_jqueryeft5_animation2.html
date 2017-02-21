@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery 停止动画</title>
+<script src="jquery-1.11.1.min.js">
+	
+</script>
+<script>
+	$(document).ready(function() {
+		$("#flip").click(function() {
+			$("#panel").slideDown(5000);
+		});
+		$("#stop").click(function() {
+			$("#panel").stop();
+		});
+	});
+</script>
+
+<style type="text/css">
+#panel,#flip {
+	padding: 5px;
+	text-align: center;
+	background-color: #e5eecc;
+	border: solid 1px #c3c3c3;
+}
+
+#panel {
+	padding: 50px;
+	display: none;
+}
+</style>
+</head>
+<body>
+	<button id="stop">停止滑动</button>
+	<div id="flip">点击这里，向下滑动面板</div>
+	<div id="panel">Hello world!</div>
+	<p>
+		<b>注释：</b>jQuery stop() 方法用于停止动画或效果，在它们完成之前。 stop() 方法适用于所有 jQuery
+		效果函数，包括滑动、淡入淡出和自定义动画。
+	</p>
+</body>
+</html>

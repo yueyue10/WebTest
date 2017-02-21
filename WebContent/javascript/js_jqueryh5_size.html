@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery - 尺寸</title>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+	$(document).ready(
+			function() {
+				$("button#btn1").click(
+						function() {
+							var txt = "";
+							txt += "Width of div: " + $("#div1").width()
+									+ "</br>";
+							txt += "Height of div: " + $("#div1").height()
+									+ "</br>";
+							txt += "Inner width of div: "
+									+ $("#div1").innerWidth() + "</br>";
+							txt += "Inner height of div: "
+									+ $("#div1").innerHeight() + "</br>";
+							txt += "Outer width of div: "
+									+ $("#div1").outerWidth() + "</br>";
+							txt += "Outer height of div: "
+									+ $("#div1").outerHeight();
+							$("#div1").html(txt);
+						});
+			});
+</script>
+<script>
+	$(document).ready(function() {
+		$("button#btn2").click(function() {
+			var txt = "";
+			txt += "Document width/height: " + $(document).width();
+			txt += "x" + $(document).height() + "\n";
+			txt += "Window width/height: " + $(window).width();
+			txt += "x" + $(window).height();
+			alert(txt);
+		});
+	});
+</script>
+<script>
+	$(document).ready(function() {
+		$("button#btn3").click(function() {
+			$("#div2").width(320).height(320);
+		});
+	});
+</script>
+</head>
+<body>
+	<p>
+		<b>通过 jQuery，很容易处理元素和浏览器窗口的尺寸.</b> <br />jQuery 尺寸 方法 <br /> <b>jQuery
+			提供多个处理尺寸的重要方法： </b><br />width()<br /> height() <br />innerWidth() <br />innerHeight()
+		<br />outerWidth() <br />outerHeight()
+	</p>
+	<!-- 示例一 -->
+	<hr />
+	<div id="div1"
+		style="height: 200px; width: 300px; padding: 10px; margin: 3px; border: 1px solid blue; background-color: lightblue;"></div>
+	<br>
+	<button id="btn1">显示 div 的尺寸</button>
+	<p>width() - 返回元素的宽度。</p>
+	<p>height() - 返回元素的高度。</p>
+	<!-- 示例二 -->
+	<hr />
+	<button id="btn2">显示文档和窗口的尺寸</button>
+	<!-- 示例三 -->
+	<hr />
+	<div id="div2"
+		style="height: 100px; width: 300px; padding: 10px; margin: 3px; border: 1px solid blue; background-color: lightblue;"></div>
+	<br>
+	<button id="btn3">调整 div 的尺寸</button>
+	<p>
+		<b>注释：</b> 调整div的尺寸
+	</p>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery - 添加元素</title>
+<script src="jquery-1.11.1.min.js"></script>
+<!-- 点击按钮在段落或者列表后面追加内容 -->
+<script>
+	$(document).ready(function() {
+		$("#btn1").click(function() {
+			$("p#append").append(" <b>Appended text</b>.");
+		});
+
+		$("#btn2").click(function() {
+			$("ol#append").append("<li>Appended item</li>");
+		});
+	});
+</script>
+<!-- 点击按钮在段落或者列表前面追加内容 -->
+<script>
+	$(document).ready(function() {
+		$("#btn3").click(function() {
+			$("p#prepend").prepend("<b>Prepended text</b>. ");
+		});
+		$("#btn4").click(function() {
+			$("ol#prepend").prepend("<li>Prepended item</li>");
+		});
+	});
+</script>
+<!-- 点击按钮在appendbtn后面追加多个内容 -->
+<script>
+	function appendText() {
+		var txt1 = "<p>以 HTML 创建新元素Text.</p>"; // 以 HTML 创建新元素
+		var txt2 = $("<p></p>").text("以 jQuery 创建新元素Text."); // 以 jQuery 创建新元素
+		var txt3 = document.createElement("p");
+		txt3.innerHTML = "通过 DOM 来创建文本 Text."; // 通过 DOM 来创建文本
+		$("#appendbtn").append(txt1, txt2, txt3); // 追加新元素
+	}
+</script>
+<!-- 点击按钮在图片前面或者后面追加内容 -->
+<script>
+	$(document).ready(function() {
+		$("#btn5").click(function() {
+			$("img#img1").before("<b>Before</b>");
+		});
+
+		$("#btn6").click(function() {
+			$("img#img1").after("<i>After</i>");
+		});
+	});
+</script>
+<!-- 点击按钮在图片前面或者后面追加多个元素 -->
+<script>
+	function afterText() {
+		var txt1 = "<b>I </b>"; // 以 HTML 创建元素
+		var txt2 = $("<i></i>").text("love "); // 通过 jQuery 创建元素
+		var txt3 = document.createElement("big"); // 通过 DOM 创建元素
+		txt3.innerHTML = "jQuery!";
+		$("img#img2").after(txt1, txt2, txt3); // 在 img 之后插入新元素
+	}
+</script>
+</head>
+<body>
+	<p>
+		我们将学习用于添加新内容的四个 jQuery 方法：<br /> append() - 在被选元素的结尾插入内容 <br />prepend()
+		- 在被选元素的开头插入内容<br /> after() - 在被选元素之后插入内容 <br />before() -
+		在被选元素之前插入内容
+	</p>
+	<!-- 示例一 -->
+	<hr />
+	<p>
+		<b>注释：</b>jQuery append() 方法 jQuery append() 方法在被选元素的结尾插入内容。
+	</p>
+	<p id="append">This is a paragraph.</p>
+	<p id="append">This is another paragraph.</p>
+	<ol id="append">
+		<li>List item 1</li>
+		<li>List item 2</li>
+		<li>List item 3</li>
+	</ol>
+	<button id="btn1">追加文本</button>
+	<button id="btn2">追加列表项</button>
+	<!-- 示例二 -->
+	<hr />
+	<p>
+		<b>注释：</b>jQuery prepend() 方法 jQuery prepend() 方法在被选元素的开头插入内容。
+	</p>
+
+	<p id="prepend">This is a paragraph.</p>
+	<p id="prepend">This is another paragraph.</p>
+	<ol id="prepend">
+		<li>List item 1</li>
+		<li>List item 2</li>
+		<li>List item 3</li>
+	</ol>
+
+	<button id="btn3">添加文本</button>
+	<button id="btn4">添加列表项</button>
+	<!-- 示例三 -->
+	<hr />
+	<p>
+		<b>注释：</b>通过三种方法来创建文本。通过 append()或者 prepend()方法添加若干新元素
+	</p>
+	<button id="appendbtn" onclick="appendText()">追加文本</button>
+	<!-- 示例四 -->
+	<hr />
+	<img id="img1" src="../image/eg_w3school.gif" alt="W3School Logo" />
+	<br>
+	<br>
+	<button id="btn5">在图片前面添加文本</button>
+	<button id="btn6">在图片后面添加文本</button>
+	<p>
+		<b>注释：</b>jQuery after() 和 before() 方法 <br />jQuery after()
+		方法在被选元素之后插入内容。 <br />jQuery before() 方法在被选元素之前插入内容。
+	</p>
+	<!-- 示例五 -->
+	<hr />
+	<img id="img2" src="../image/eg_w3school.gif" alt="W3School Logo" />
+	<br>
+	<br>
+	<button onclick="afterText()">在图片后面添加文本</button>
+	<p>
+		<b>注释：</b>通过三种方法来创建文本。通过before()或者 after()方法添加若干新元素
+	</p>
+</body>
+</html>

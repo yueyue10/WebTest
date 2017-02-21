@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JavaScript 对象</title>
+</head>
+<body>
+	<p>
+		<b>注释：</b>通过 JavaScript，您能够定义并创建自己的对象。 创建新对象有两种不同的方法： <br /> 一、
+		定义并创建对象的实例 <br /> 二、使用函数来定义对象，然后创建新的对象实例
+	</p>
+	<hr />
+	<!-- 第一种方法: -->
+	<p>第一种方法：</p>
+	<p>创建直接的实例 这个例子创建了对象的一个新实例，并向其添加了四个属性：</p>
+	<script>
+		person = new Object();
+		person.firstname = "Bill";
+		person.lastname = "Gates";
+		person.age = 56;
+		person.eyecolor = "blue";
+		document.write(person.firstname + " is " + person.age + " years old.");
+	</script>
+	<br />
+	<p>替代语法（使用对象 literals）：</p>
+	<script>
+		person = {
+			firstname : "Bill",
+			lastname : "gates",
+			age : 56,
+			eyecolor : "blue"
+		}
+		document.write(person.firstname + " is " + person.age + " years old.");
+	</script>
+	<!-- 第二种方法: -->
+	<br />
+	<p>第二种方法：</p>
+	<p>使用对象构造器</p>
+	<script>
+		function person(firstname, lastname, age, eyecolor) {
+			this.firstname = firstname;
+			this.lastname = lastname;
+			this.age = age;
+			this.eyecolor = eyecolor;
+		}
+		myFather = new person("Bill", "Gates", 56, "blue");
+
+		document.write(myFather.firstname + " is " + myFather.age
+				+ " years old.");
+	</script>
+	<hr />
+	<p>
+		<b>注释：</b>把方法添加到 JavaScript 对象
+	</p>
+	<script>
+		function person(firstname, lastname, age, eyecolor) {
+			this.firstname = firstname;
+			this.lastname = lastname;
+			this.age = age;
+			this.eyecolor = eyecolor;
+
+			this.changeName = changeName;
+			function changeName(name) {
+				this.lastname = name;
+			}
+		}
+		myMother = new person("Steve", "Jobs", 56, "green");
+		myMother.changeName("Ballmer");
+		document.write(myMother.lastname);
+	</script>
+	<hr />
+	<p>
+		<b>注释：</b>JavaScript for...in 语句循环遍历对象的属性。
+	</p>
+	<script>
+		function myFunction() {
+			var x;
+			var txt = "persion的所有属性：";
+			var person = {
+				fname : "Bill",
+				lname : "Gates",
+				age : 56
+			};
+
+			for (x in person) {
+				txt = txt +x+"="+ person[x]+";";
+			}
+
+			document.getElementById("demo").innerHTML = txt;
+		}
+	</script>
+	<p>点击下面的按钮，循环遍历对象 "person" 的属性。</p>
+	<button onclick="myFunction()">点击这里</button>
+	<p id="demo"></p>
+</body>
+</html>

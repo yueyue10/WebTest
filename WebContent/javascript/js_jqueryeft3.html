@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery 效果 - 滑动</title>
+<script src="jquery-1.11.1.min.js">
+	
+</script>
+<!-- 点击id为flip的标签对panel标签执行slideToggle方法 -->
+<script>
+	$(document).ready(function() {
+		$(".flip").click(function() {
+			$(".panel").slideToggle("slow");
+		});
+	});
+</script>
+<style type="text/css">
+div.panel,p.flip,div.panel1,div.flip1,div.panel2,div.flip2,div.panel3,div.flip3
+	{
+	margin: 0px;
+	padding: 5px;
+	text-align: center;
+	background: #e5eecc;
+	border: solid 1px #c3c3c3;
+}
+
+div.panel,div.panel1,div.panel3 {
+	height: 120px;
+	display: none;
+}
+
+div.panel2 {
+	height: 120px;
+}
+</style>
+<!-- 点击class为flip1的标签时触发class为panel1的标签的slideDown方法 -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".flip1").click(function() {
+			$(".panel1").slideDown("slow");
+		});
+	});
+</script>
+<!-- 点击class为flip2的标签时触发class为panel2的标签的slideUp方法 -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".flip2").click(function() {
+			$(".panel2").slideUp("slow");
+		});
+	});
+</script>
+<!-- 点击class为flip3的标签时触发class为panel3的标签的slideToggle方法 -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".flip3").click(function() {
+			$(".panel3").slideToggle("slow");
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- 示例一 -->
+	<p class="flip">点击这里，隐藏/显示面板</p>
+	<div class="panel" style="display: none;">
+		<p>一寸光阴一寸金，因此，我们为您提供快捷易懂的学习内容。</p>
+		<p>在这里，您可以通过一种易懂的便利的模式获得您需要的任何知识。</p>
+	</div>
+	<!-- 示例二 -->
+	<br />
+	<hr />
+	<div class="panel1">
+		<p>W3School - 领先的 Web 技术教程站点</p>
+		<p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
+	</div>
+	<p class="flip1">请点击这里</p>
+	<p>
+		<b>注释：</b>演示 jQuery slideDown() 方法。
+	</p>
+	<!-- 示例三 -->
+	<hr />
+	<div class="panel2">
+		<p>W3School - 领先的 Web 技术教程站点</p>
+		<p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
+	</div>
+
+	<p class="flip2">请点击这里</p>
+	<p>
+		<b>注释：</b>演示 jQuery slideUp() 方法。
+	</p>
+	<!-- 示例四 -->
+	<hr />
+	<div class="panel3">
+		<p>W3School - 领先的 Web 技术教程站点</p>
+		<p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
+	</div>
+
+	<p class="flip3">请点击这里</p>
+	<p>
+		<b>注释：</b>演示 jQuery slideToggle() 方法。
+	</p>
+</body>
+</html>

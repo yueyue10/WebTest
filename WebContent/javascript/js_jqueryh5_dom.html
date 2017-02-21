@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery - 获得内容和属性</title>
+<script src="jquery-1.11.1.min.js"></script>
+<!-- 获取标签的text和html属性值 -->
+<script>
+	$(document).ready(function() {
+		$("#btn1").click(function() {
+			alert("Text: " + $("#test").text());
+		});
+		$("#btn2").click(function() {
+			alert("HTML: " + $("#test").html());
+		});
+	});
+</script>
+<!-- 获取标签的value属性值 -->
+<script>
+	$(document).ready(function() {
+		$("button#button1").click(function() {
+			alert("Value: " + $("#test1").val());
+		});
+	});
+</script>
+<!-- 获取标签的href属性值 -->
+<script>
+	$(document).ready(function() {
+		$("button#button2").click(function() {
+			alert($("#w3s").attr("href"));
+		});
+	});
+</script>
+</head>
+<body>
+	<p>
+		<b>注释：</b>jQuery 拥有可操作 HTML 元素和属性的强大方法。
+	</p>
+	<p>
+		获得内容 - text()、html() 以及 val() 三个简单实用的用于 DOM 操作的 jQuery 方法： <br />text()
+		- 设置或返回所选元素的文本内容 <br />html() - 设置或返回所选元素的内容（包括 HTML 标记） <br />val()
+		- 设置或返回表单字段的值
+	</p>
+	<!-- 示例一 -->
+	<hr />
+	<p id="test">
+		这是段落中的<b>粗体</b>文本。
+	</p>
+	<button id="btn1">显示文本</button>
+	<button id="btn2">显示 HTML</button>
+	<!-- 示例二 -->
+	<hr />
+	<p>
+		姓名：<input type="text" id="test1" value="米老鼠">
+	</p>
+	<button id="button1">显示值</button>
+	<!-- 示例三 -->
+	<hr />
+	<p>
+		<a href="http://www.w3school.com.cn" id="w3s">W3School.com.cn</a>
+	</p>
+	<button id="button2">显示 href 值</button>
+</body>
+</html>

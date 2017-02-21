@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery - 设置内容和属性</title>
+<script src="jquery-1.11.1.min.js"></script>
+<!--  -->
+<script>
+	$(document).ready(function() {
+		$("#btn1").click(function() {
+			$("#test1").text("Hello world!");
+		});
+		$("#btn2").click(function() {
+			$("#test2").html("<b>Hello world!</b>");
+		});
+		$("#btn3").click(function() {
+			$("#test3").val("Dolly Duck");
+		});
+	});
+</script>
+<!--  -->
+<script>
+	$(document).ready(function() {
+		$("button").click(function() {
+			$("#w3s").attr("href", "http://www.w3school.com.cn/jquery");
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- 示例一 -->
+	<p id="test1">这是段落。</p>
+	<p id="test2">这是另一个段落。</p>
+	<p>
+		Input field: <input type="text" id="test3" value="Mickey Mouse">
+	</p>
+	<button id="btn1">设置文本</button>
+	<button id="btn2">设置 HTML</button>
+	<button id="btn3">设置值</button>
+	<!-- 示例二 -->
+	<hr />
+	<p>
+		<b>注释：</b>设置属性 - attr()
+	</p>
+	<p>
+		<a href="http://www.w3school.com.cn" id="w3s">W3School.com.cn</a>
+	</p>
+	<button>改变 href 值</button>
+	<p>请把鼠标指针移动到链接上，或者点击该链接，来查看已经改变的 href 值。</p>
+</body>
+</html>

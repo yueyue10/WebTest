@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery 效果 - 动画</title>
+<script src="jquery-1.11.1.min.js">
+	
+</script>
+<!-- 点击id为bDemo的按钮时，对id为divDemo的div进行多项动画操作 -->
+<script>
+	$(document).ready(function() {
+		$("button#bDemo").click(function() {
+			$("div#divDemo").animate({
+				left : "170px",
+				opacity : "0.5"
+			}, "slow");
+			$("div#divDemo").animate({
+				fontSize : "3em"
+			}, "slow");
+		});
+	});
+</script>
+<!-- 点击按钮时，让div移动到距离左边250px、透明度0.5、宽高都是150px的位置 -->
+<script>
+	$(document).ready(function() {
+		$("button#button").click(function() {
+			$("div#div").animate({
+				left : '250px',
+				opacity : '0.5',
+				height : '150px',
+				width : '150px'
+			});
+		});
+	});
+</script>
+<!-- 移动到距离左边250px的位置，宽度和高度在之前的基础上分别加150px -->
+<script>
+	$(document).ready(function() {
+		$("button#button1").click(function() {
+			$("div#div1").animate({
+				left : '250px',
+				height : '+=150px',
+				width : '+=150px'
+			});
+		});
+	});
+</script>
+<!-- 对标签的高度进行转换，0-当前高度切换 -->
+<script>
+	$(document).ready(function() {
+		$("button#button2").click(function() {
+			$("div#div2").animate({
+				height : 'toggle'
+			});
+		});
+	});
+</script>
+<!-- 标签顺序执行下面的动画 -->
+<script>
+	$(document).ready(function() {
+		$("button#button3").click(function() {
+			var div = $("div#div3");
+			div.animate({
+				height : '300px',
+				opacity : '0.4'
+			}, "slow");
+			div.animate({
+				width : '300px',
+				opacity : '0.8'
+			}, "slow");
+			div.animate({
+				height : '100px',
+				opacity : '0.4'
+			}, "slow");
+			div.animate({
+				width : '100px',
+				opacity : '0.8'
+			}, "slow");
+		});
+	});
+</script>
+<!-- 标签顺序执行下面的动画 -->
+<script>
+	$(document).ready(function() {
+		$("button#button4").click(function() {
+			var div = $("div#div4");
+			div.animate({
+				left : '100px'
+			}, "slow");
+			div.animate({
+				fontSize : '3em'
+			}, "slow");
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- 示例一 -->
+	<button id="bDemo">开始动画</button>
+	<br>
+	<br>
+	<div id="divDemo"
+		style="background: #98bf21; height: 100px; width: 210px; position: relative;">jQuery</div>
+	<!-- 示例二 -->
+	<hr />
+	<button id="button">开始动画</button>
+	<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position
+		属性设置为 relative、fixed 或 absolute。</p>
+	<div id="div"
+		style="background: #98bf21; height: 100px; width: 100px; position: absolute;">
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<p>
+		<b>注释：</b>jQuery animate() - 操作多个属性
+	</p>
+	<!-- 示例三 -->
+	<hr />
+	<button id="button1">开始动画</button>
+	<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position
+		属性设置为 relative、fixed 或 absolute。</p>
+	<div id="div1"
+		style="background: #98bf21; height: 100px; width: 100px; position: absolute;">
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<p>
+		<b>注释：</b>jQuery animate() - 使用相对值
+	</p>
+	<!-- 示例四 -->
+	<hr />
+	<button id="button2">开始动画</button>
+	<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position
+		属性设置为 relative、fixed 或 absolute。</p>
+	<div id="div2"
+		style="background: #98bf21; height: 100px; width: 100px; position: absolute;">
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<p>
+		<b>注释：</b>jQuery animate() - 使用预定义的值
+	</p>
+	<!-- 示例五 -->
+	<hr />
+	<button id="button3">开始动画</button>
+	<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position
+		属性设置为 relative、fixed 或 absolute。</p>
+	<div id="div3"
+		style="background: #98bf21; height: 100px; width: 100px; position: absolute;"></div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<p>
+		<b>注释：</b>jQuery animate() - 使用队列功能
+	</p>
+	<!-- 示例六 -->
+	<hr />
+	<button id="button4">开始动画</button>
+	<p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position
+		属性设置为 relative、fixed 或 absolute。</p>
+	<div id="div4"
+		style="background: #98bf21; height: 100px; width: 200px; position: absolute;">HELLO</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<p>
+		<b>注释：</b>jQuery animate() - 使用队列功能
+	</p>
+</body>
+</html>

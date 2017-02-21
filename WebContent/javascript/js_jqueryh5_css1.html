@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery - css() 方法</title>
+<script src="jquery-1.11.1.min.js"></script>
+<!--  -->
+<script>
+	$(document).ready(function() {
+		$("button#btn1").click(function() {
+			alert("Background color = " + $("p#a").css("background-color"));
+		});
+		$("button#btn2").click(function() {
+			alert("Background color = " + $("p#b").css("background-color"));
+		});
+		$("button#btn3").click(function() {
+			alert("Background color = " + $("p#c").css("background-color"));
+		});
+	});
+</script>
+<!--  -->
+<script>
+	$(document).ready(function() {
+		$("button#set").click(function() {
+			$("p#set").css("background-color", "yellow");
+		});
+	});
+</script>
+<!--  -->
+<script>
+	$(document).ready(function() {
+		$("button#set1").click(function() {
+			$("p#set1").css({
+				"background-color" : "yellow",
+				"font-size" : "200%"
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- 示例一 -->
+	<p>
+		<b>注释：</b> jQuery css() 方法 css() 方法设置或返回被选元素的一个或多个样式属性。
+	</p>
+	<h2>这是标题</h2>
+	<p id="a" style="background-color: #ff0000">这是一个段落。</p>
+	<p id="b" style="background-color: #00ff00">这是一个段落。</p>
+	<p id="c" style="background-color: #0000ff">这是一个段落。</p>
+	<button id="btn1">返回id为a的 p元素的背景色</button>
+	<button id="btn2">返回id为b的p元素的背景色</button>
+	<button id="btn3">返回id为c的 p元素的背景色</button>
+	<!-- 示例二 -->
+	<hr />
+	<h2>这是标题</h2>
+	<p id="set" style="background-color: #ff0000">这是一个段落。</p>
+	<p id="set" style="background-color: #00ff00">这是一个段落。</p>
+	<p id="set" style="background-color: #0000ff">这是一个段落。</p>
+	<p>这是一个段落。</p>
+	<button id="set">设置 p 元素的背景色</button>
+	<!-- 示例三 -->
+	<hr />
+	<h2>这是标题</h2>
+	<p id="set1" style="background-color: #ff0000">这是一个段落。</p>
+	<p id="set1" style="background-color: #00ff00">这是一个段落。</p>
+	<p id="set1" style="background-color: #0000ff">这是一个段落。</p>
+	<p>这是一个段落。</p>
+	<button id="set1">设置 p 元素的背景色</button>
+	<p>
+		<b>注释：</b>设置多个 CSS 属性
+	</p>
+</body>
+</html>

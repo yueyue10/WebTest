@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery - Chaining</title>
+<script src="jquery-1.11.1.min.js">
+	
+</script>
+<script>
+	$(document).ready(function() {
+		$("button").click(function() {
+			$("#p1").css("color", "red").slideUp(2000).slideDown(2000);
+		});
+	});
+</script>
+</head>
+<body>
+	<p>
+		<b>注释：</b> 通过 jQuery，您可以把动作/方法链接起来。 Chaining 允许我们在一条语句中允许多个 jQuery
+		方法（在相同的元素上）。
+	</p>
+	<p id="p1">jQuery 乐趣十足！</p>
+	<button>点击这里</button>
+</body>
+</html>

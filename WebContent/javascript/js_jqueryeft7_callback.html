@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery Callback 函数</title>
+<script src="jquery-1.11.1.min.js">
+	
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("button").click(function() {
+			$("p").hide(1000, function() {
+				alert("The paragraph is now hidden");
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<p>
+		<b>注释：</b>Callback 函数在当前动画 100% 完成之后执行
+	</p>
+	<button type="button">Hide</button>
+	<p>This is a paragraph with little content.</p>
+</body>
+</html>

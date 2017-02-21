@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery 效果 - 淡入淡出</title>
+<script src="jquery-1.11.1.min.js">
+	
+</script>
+<!-- 点击class为flip的标签时class为panel的标签会在1s内淡入淡出 -->
+<script>
+	$(document).ready(function() {
+		$(".flip").click(function() {
+			$(".panel").fadeToggle(1000);
+		});
+	});
+</script>
+<!-- 点击id为button1的标签时让div1、div2、div3执行fadeIn方法 -->
+<script>
+	$(document).ready(function() {
+		$("#button1").click(function() {
+			$("#div1").fadeIn();
+			$("#div2").fadeIn("slow");
+			$("#div3").fadeIn(3000);
+		});
+	});
+</script>
+<!-- 点击id为button2的标签时，触发fadeOut方法 -->
+<script>
+	$(document).ready(function() {
+		$("#button2").click(function() {
+			$("#div1").fadeOut();
+			$("#div2").fadeOut("slow");
+			$("#div3").fadeOut(3000);
+		});
+	});
+</script>
+<!-- 点击id为button3的标签时，触发fadetoggle方法 -->
+<script>
+	$(document).ready(function() {
+		$("#button3").click(function() {
+			$("#div1").fadeToggle();
+			$("#div2").fadeToggle("slow");
+			$("#div3").fadeToggle(3000);
+		});
+	});
+</script>
+<!-- 点击id为button4的标签时，触发fadeTo方法 -->
+<script>
+	$(document).ready(function() {
+		$("#button4").click(function() {
+			$("#div1").fadeTo("slow", 0.05);
+			$("#div2").fadeTo("slow", 0.4);
+			$("#div3").fadeTo("slow", 0.7);
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- 示例一 -->
+	<p class="flip">点击这里，隐藏/显示面板</p>
+	<div class="panel" style="background-color: lightblue;">
+		<p>一寸光阴一寸金，因此，我们为您提供快捷易懂的学习内容。</p>
+		<p>在这里，您可以通过一种易懂的便利的模式获得您需要的任何知识。</p>
+	</div>
+	<!-- 示例二 -->
+	<hr />
+	<div id="div1"
+		style="width: 80px; height: 80px; display: none; background-color: red;"></div>
+	<br>
+	<div id="div2"
+		style="width: 80px; height: 80px; display: none; background-color: green;"></div>
+	<br>
+	<div id="div3"
+		style="width: 80px; height: 80px; display: none; background-color: blue;"></div>
+	<hr />
+	<!-- 示例二 -->
+	<p>演示带有不同参数的 fadeIn() 方法。</p>
+	<button id="button1">点击这里，使三个矩形淡入</button>
+	<!-- 示例三 -->
+	<hr />
+	<p>演示带有不同参数的 fadeOut() 方法。</p>
+	<button id="button2">点击这里，使三个矩形淡出</button>
+	<!-- 示例四 -->
+	<hr />
+	<p>演示带有不同参数的 fadeToggle() 方法。</p>
+	<button id="button3">点击这里，使三个矩形淡入淡出</button>
+	<!-- 示例五 -->
+	<hr />
+	<p>演示带有不同参数的 fadeTo() 方法。</p>
+	<button id="button4">点击这里，使三个矩形渐变为给定的不透明度</button>
+</body>
+</html>
