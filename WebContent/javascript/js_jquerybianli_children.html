@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery 遍历 - 后代</title>
+<script src="jquery-1.11.1.min.js"></script>
+<!-- 点击id为children的button时，将div的子标签颜色设置为红色-->
+<script>
+	$(document).ready(function() {
+		$("button#children").click(function() {
+			$("div").children().css({
+				"border" : "2px solid red"
+			});
+		});
+	});
+</script>
+<!-- 点击id为children1的button时，将div的子标签中的class为1的p标签的颜色设置为红色-->
+<script>
+	$(document).ready(function() {
+		$("button#children1").click(function() {
+			$("div").children("p.1").css({
+				"color" : "red",
+				"border" : "2px solid red"
+			});
+		});
+	});
+</script>
+<!-- 点击id为children2的button时，查找span标签并设置为红色-->
+<script>
+	$(document).ready(function() {
+		$("button#children2").click(function() {
+			$("div").find("span").css({
+				"color" : "red",
+				"border" : "2px solid red"
+			});
+		});
+	});
+</script>
+<!-- 点击id为children3的button时，查找所有子标签并设置为红色-->
+<script>
+	$(document).ready(function() {
+		$("button#children3").click(function() {
+			$("div").find("*").css({
+				"color" : "red",
+				"border" : "2px solid red"
+			});
+		});
+	});
+</script>
+<style>
+.descendants * {
+	display: block;
+	border: 2px solid lightgrey;
+	color: lightgrey;
+	padding: 5px;
+	margin: 15px;
+}
+</style>
+</head>
+<body>
+	<!-- 示例一 -->
+	<h4>jQuery children() 方法</h4>
+	<p>children() 方法返回被选元素的所有直接子元素。 该方法只会向下一级对 DOM 树进行遍历。</p>
+	<div class="descendants"
+		style="width: 500px; border: 2px solid lightgrey;">
+		div (当前元素)
+		<p class="1">
+			p class为1(子) <span>span (孙)</span>
+		</p>
+		<p class="2">
+			p class为2(child) <span>span (孙)</span>
+		</p>
+	</div>
+	<br />
+	<button id="children">查找span的子元素</button>
+	<button id="children1">查找span的子元素,并且class为1的p</button>
+	<hr />
+	<h4>jQuery find() 方法</h4>
+	<p>find() 方法返回被选元素的后代元素，一路向下直到最后一个后代。</p>
+	<button id="children2">查找属于 div 后代的所有 span 元素</button>
+	<button id="children3">查找属于div 的所有后代：</button>
+</body>
+</html>

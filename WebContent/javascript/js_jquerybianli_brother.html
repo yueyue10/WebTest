@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery 遍历 - 同胞</title>
+<style>
+.siblings * {
+	display: block;
+	border: 2px solid lightgrey;
+	color: lightgrey;
+	padding: 5px;
+	margin: 15px;
+}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<!-- 获取h2的同胞的所有标签 -->
+<script>
+	$(document).ready(function() {
+		$("button#siblings").click(function() {
+			$("h2").siblings().css({
+				"color" : "red",
+				"border" : "2px solid red"
+			});
+		});
+	});
+</script>
+<!-- 获取h2的所有同胞标签里面为p标签的 -->
+<script>
+	$(document).ready(function() {
+		$("button#siblings1").click(function() {
+			$("h2").siblings("p").css({
+				"color" : "red",
+				"border" : "2px solid red"
+			});
+		});
+	});
+</script>
+<!-- 获取h2的下一个同胞标签 -->
+<script>
+	$(document).ready(function() {
+		$("button#next").click(function() {
+			$("h2").next().css({
+				"color" : "red",
+				"border" : "2px solid red"
+			});
+		});
+	});
+</script>
+<!-- 获取h2之后的所有同胞标签 -->
+<script>
+	$(document).ready(function() {
+		$("button#nextAll").click(function() {
+			$("h2").nextAll().css({
+				"color" : "red",
+				"border" : "2px solid red"
+			});
+		});
+	});
+</script>
+<!-- 获取h2到h6之间的所有同胞标签 -->
+<script>
+	$(document).ready(function() {
+		$("button#nextUntil").click(function() {
+			$("h2").nextUntil("h6").css({
+				"color" : "red",
+				"border" : "2px solid red"
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<p>同胞拥有相同的父元素。 通过 jQuery，您能够在 DOM 树中遍历元素的同胞元素。</p>
+	<h4>在 DOM 树中水平遍历</h4>
+	<p>有许多有用的方法让我们在 DOM 树进行水平遍历：</p>
+	<ul>
+		<li>siblings()</li>
+		<li>next()</li>
+		<li>nextAll()</li>
+		<li>nextUntil()</li>
+		<li>prev()</li>
+		<li>prevAll()</li>
+		<li>prevUntil()</li>
+	</ul>
+	<!-- 示例一 -->
+	<div class="siblings">
+		<div>
+			div (父)
+			<p>p</p>
+			<span>span</span>
+			<h2>h2</h2>
+			<h3>h3</h3>
+			<p>p</p>
+		</div>
+	</div>
+	<p>
+		<b>jQuery siblings() 方法：</b>siblings() 方法返回被选元素的所有同胞元素。
+	</p>
+	<button id="siblings">获取h2标签的同胞元素。</button>
+	<button id="siblings1">获取属于 h2的同胞元素的所有 p元素</button>
+	<!-- 示例二 -->
+	<hr />
+	<p>
+		<b>jQuery next() 方法：</b>next() 方法返回被选元素的下一个同胞元素。
+	</p>
+	<p>
+		<b>jQuery nextAll() 方法：</b>nextAll() 方法返回被选元素的所有跟随的同胞元素。
+	</p>
+	<button id="next">返回 h2的下一个同胞元素</button>
+	<button id="nextAll">返回 h2的下一个同胞元素</button>
+	<!-- 示例三 -->
+	<hr />
+	<div class="siblings">
+		<div>
+			div (父)
+			<p>p</p>
+			<span>span</span>
+			<h2>h2</h2>
+			<h3>h3</h3>
+			<h4>h4</h4>
+			<h5>h5</h5>
+			<h6>h6</h6>
+			<p>p</p>
+		</div>
+	</div>
+	<button id="nextUntil">返回介于 h2 与 h6 元素之间的所有同胞元素</button>
+	<p>
+		<b>jQuery nextUntil() 方法 ：</b>nextUntil() 方法返回介于两个给定参数之间的所有跟随的同胞元素。
+	</p>
+</body>
+</html>

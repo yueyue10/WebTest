@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JSON 实例</title>
+</head>
+<body>
+	<!-- 示例一 -->
+	<h2>在 JavaScript 中创建 JSON 对象</h2>
+	<p>
+		Name: <span id="jname"></span><br /> Age: <span id="jage"></span><br />
+		Address: <span id="jstreet"></span><br /> Phone: <span id="jphone"></span><br />
+	</p>
+
+	<script type="text/javascript">
+		var JSONObject = {
+			"name" : "Bill Gates",
+			"street" : "Fifth Avenue New York 666",
+			"age" : 56,
+			"phone" : "555 1234567"
+		};
+		document.getElementById("jname").innerHTML = JSONObject.name
+		document.getElementById("jage").innerHTML = JSONObject.age
+		document.getElementById("jstreet").innerHTML = JSONObject.street
+		document.getElementById("jphone").innerHTML = JSONObject.phone
+	</script>
+	<!-- 示例二 -->
+	<hr />
+	<h2>通过 JSON 字符串来创建对象</h2>
+	<p>
+		First Name: <span id="fname2"></span>
+	</p>
+
+	<script type="text/javascript">
+		var employees = [ {
+			"firstName" : "Bill",
+			"lastName" : "Gates"
+		}, {
+			"firstName" : "George",
+			"lastName" : "Bush"
+		}, {
+			"firstName" : "Thomas",
+			"lastName" : "Carter"
+		} ];
+		employees[1].firstName = "Jobs";
+		document.getElementById("fname2").innerHTML = employees[1].firstName;
+	</script>
+	<!-- 示例三 -->
+	<hr />
+	<h2>通过 JSON 字符串来创建对象</h2>
+	<p>
+		First Name: <span id="fname3"></span><br /> Last Name: <span
+			id="lname3"></span><br />
+	</p>
+	<script type="text/javascript">
+		var txt = '{"employees":['
+				+ '{"firstName":"Bill","lastName":"Gates" },'
+				+ '{"firstName":"George","lastName":"Bush" },'
+				+ '{"firstName":"Thomas","lastName":"Carter" }]}';
+
+		var obj = eval("(" + txt + ")");
+
+		document.getElementById("fname3").innerHTML = obj.employees[1].firstName
+		document.getElementById("lname3").innerHTML = obj.employees[1].lastName
+	</script>
+	<!-- 示例四 -->
+	<hr />
+	<h2>通过 JSON 字符串来创建对象</h2>
+	<p>
+		First Name: <span id="fname4"></span><br /> Last Name: <span
+			id="lname4"></span><br />
+	</p>
+	<script type="text/javascript">
+		var txt = '{"employees":['
+				+ '{"firstName":"Bill","lastName":"Gates" },'
+				+ '{"firstName":"George","lastName":"Bush" },'
+				+ '{"firstName":"Thomas","lastName":"Carter" }]}';
+
+		obj = JSON.parse(txt);
+
+		document.getElementById("fname4").innerHTML = obj.employees[1].firstName
+		document.getElementById("lname4").innerHTML = obj.employees[1].lastName
+	</script>
+</body>
+</html>

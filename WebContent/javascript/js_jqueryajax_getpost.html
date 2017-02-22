@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery - AJAX get() 和 post() 方法</title>
+<script src="jquery-1.11.1.min.js"></script>
+<!-- 读取外部文件demo_test.txt中的内容 -->
+<script>
+	$(document).ready(function() {
+		$("button#btn1").click(function() {
+			$.get("demo_test.asp", function(data, status) {
+				alert("数据：" + data + "\n状态：" + status);
+			});
+		});
+	});
+</script>
+<script>
+	$(document).ready(function() {
+		$("button#btn2").click(function() {
+			$.post("demo_test_post.asp", {
+				name : "Donald Duck",
+				city : "Duckburg"
+			}, function(data, status) {
+				alert("数据：" + data + "\n状态：" + status);
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="intro">
+		<p>
+			<strong>jQuery get() 和 post() 方法用于通过 HTTP GET 或 POST
+				请求从服务器请求数据。</strong>
+		</p>
+	</div>
+
+	<div>
+		<h2>HTTP 请求：GET vs. POST</h2>
+		<p>两种在客户端和服务器端进行请求-响应的常用方法是：GET 和 POST。</p>
+		<ul>
+			<li><em>GET</em> - 从指定的资源请求数据</li>
+			<li><em>POST</em> - 向指定的资源提交要处理的数据</li>
+		</ul>
+
+		<p>GET 基本上用于从服务器获得（取回）数据。注释：GET 方法可能返回缓存数据。</p>
+
+		<p>POST 也可用于从服务器获取数据。不过，POST 方法不会缓存数据，并且常用于连同请求一起发送数据。</p>
+
+		<p>
+			如需学习更多有关 GET 和 POST 以及两方法差异的知识，请阅读我们的 <a
+				href="http://www.w3school.com.cn/tags/html_ref_httpmethods.asp" title="HTTP 方法：GET 对比 POST">HTTP
+				方法 - GET 对比 POST</a>。
+		</p>
+	</div>
+	<button id="btn1">向页面发送 HTTP GET 请求，然后获得返回的结果</button>
+	<button id="btn2">向页面发送 HTTP POST 请求，并获得返回的结果</button>
+</body>
+</html>

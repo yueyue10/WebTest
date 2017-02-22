@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery 遍历 - 祖先</title>
+<style>
+.ancestors * {
+	display: block;
+	border: 2px solid lightgrey;
+	color: lightgrey;
+	padding: 5px;
+	margin: 15px;
+}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<!-- 获取span标签的父标签并设置样式 -->
+<script>
+	$(document).ready(function() {
+		$("button#parent").click(function() {
+			$("span").parent().css({
+				"color" : "red",
+				"border" : "2px solid red"
+			});
+		});
+	});
+</script>
+<!-- 获取span标签的父标签并且是ul标签 -->
+<script>
+	$(document).ready(function() {
+		$("button#parent1").click(function() {
+			$("span").parents("ul").css({
+				"color" : "red",
+				"border" : "2px solid red"
+			});
+		});
+	});
+</script>
+<!-- 获取span到div之间的所有标签 -->
+<script>
+	$(document).ready(function() {
+		$("button#parent2").click(function() {
+			$("span").parentsUntil("div").css({
+				"color" : "red",
+				"border" : "2px solid red"
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<p>祖先是父、祖父或曾祖父等等。
+		<p />
+		<p>通过 jQuery，您能够向上遍历 DOM 树，以查找元素的祖先。</p>
+		<h3>向上遍历 DOM 树</h3>
+		<p>这些 jQuery 方法很有用，它们用于向上遍历 DOM 树：</p>
+		<ul>
+			<li>parent()</li>
+			<li>parents()</li>
+			<li>parentsUntil()</li>
+		</ul>
+	</div>
+	<!-- 示例一 -->
+	<hr />
+	<div>
+		<h3>jQuery parent() 方法</h3>
+		<p>parent() 方法返回被选元素的直接父元素。</p>
+		<p>该方法只会向上一级对 DOM 树进行遍历。</p>
+	</div>
+	<!-- 示例一 -->
+	<div class="ancestors">
+		<div style="width: 500px;">
+			div (曾祖父)
+			<ul>
+				ul (祖父)
+				<li>li (直接父) <span>span</span>
+				</li>
+			</ul>
+		</div>
+
+		<div style="width: 500px;">
+			div (祖父)
+			<p>
+				p (直接父) <span>span</span>
+			</p>
+		</div>
+	</div>
+	<p>
+		<b>注释：</b>获取span标签的父标签并设置样式
+	</p>
+	<button id="parent">获取span标签的父标签</button>
+	<button id="parent1">返回所有 span 元素的所有祖先，并且它是ul 元素</button>
+	<button id="parent2">返回span到div之间的所有标签</button>
+</body>
+</html>

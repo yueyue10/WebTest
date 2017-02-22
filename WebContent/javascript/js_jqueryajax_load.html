@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery - AJAX load() 方法</title>
+<script src="jquery-1.11.1.min.js"></script>
+<!-- 读取外部文件demo_test.txt中的内容 -->
+<script>
+	$(document).ready(function() {
+		$("#btn1").click(function() {
+			$('#test').load('demo_test.txt');
+		})
+	})
+</script>
+<!-- 读取外部文件demo_test.txt中id为p1的内容 -->
+<script>
+	$(document).ready(function() {
+		$("button#btn1").click(function() {
+			$("#div1").load("demo_test.txt #p1");
+		});
+	});
+</script>
+<!-- 读取外部文件demo_test.txt中的内容 并带有callback回调结果-->
+<script>
+	$(document).ready(
+			function() {
+				$("button#btn2").click(
+						function() {
+							$("#div2").load(
+									"demo_test.txt",
+									function(responseTxt, statusTxt, xhr) {
+										if (statusTxt == "success")
+											alert("外部内容加载成功！");
+										if (statusTxt == "error")
+											alert("Error: " + xhr.status + ": "
+													+ xhr.statusText);
+									});
+						});
+			});
+</script>
+</head>
+<body>
+	<h3>jQuery load() 方法</h3>
+	<p>jQuery load() 方法是简单但强大的 AJAX 方法。</p>
+	<p>load() 方法从服务器加载数据，并把返回的数据放入被选元素中。</p>
+	<!-- 示例一 -->
+	<hr />
+	<h3 id="test">请点击下面的按钮，通过 jQuery AJAX 改变这段文本。</h3>
+	<button id="btn1" type="button">获得外部的内容,把文件 "demo_test.txt"
+		的内容加载到指定的 div元素中</button>
+	<!-- 示例二 -->
+	<hr />
+	<div id="div1">
+		<h2>使用 jQuery AJAX 来改变文本</h2>
+	</div>
+	<button id="btn1">获得外部内容,把 "demo_test.txt" 文件中 id="p1"
+		的元素的内容，加载到指定的 div元素中</button>
+	<!-- 示例三-->
+	<hr />
+	<div id="div2">
+		<h2>使用 jQuery AJAX 来改变文本</h2>
+	</div>
+	<button id="btn2">获得外部内容,并带有callback反馈</button> 	
+</body>
+</html>

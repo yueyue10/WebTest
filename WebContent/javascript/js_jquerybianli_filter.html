@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery 遍历 - 过滤</title>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$("button.first").click(function() {
+			$("div p").first().css("background-color", "yellow");
+		});
+	});
+</script>
+<script>
+	$(document).ready(function() {
+		$("button.last").click(function() {
+			$("div p").last().css("background-color", "yellow");
+		});
+	});
+</script>
+<script>
+	$(document).ready(function() {
+		$("button.eq").click(function() {
+			$("p.tang").eq(1).css("background-color", "yellow");
+		});
+	});
+</script>
+<script>
+	$(document).ready(function() {
+		$("button.filter").click(function() {
+			$("p.tang").filter("#intro").css("background-color", "yellow");
+		});
+	});
+</script>
+<script>
+	$(document).ready(function() {
+		$("button.not").click(function() {
+			$("p.tang").not("#intro").css("background-color", "yellow");
+		});
+	});
+</script>
+</head>
+<body>
+	<h3>缩写搜索元素的范围</h3>
+	<p>三个最基本的过滤方法是：first(), last() 和 eq()，它们允许您基于其在一组元素中的位置来选择一个特定的元素。</p>
+	<p>其他过滤方法，比如 filter() 和 not() 允许您选取匹配或不匹配某项指定标准的元素。</p>
+	<!-- 示例一 -->
+	<hr />
+	<h1>欢迎来到我的主页</h1>
+	<div>
+		<p>这是 div 中的一个段落。</p>
+	</div>
+	<div>
+		<p>这是 div 中的另一个段落。</p>
+	</div>
+	<div>
+		<p>这是 div 中的第三个段落。</p>
+	</div>
+	<p>这也是段落。</p>
+	<button class="first">选取首个 div元素内部的第一个 p元素</button>
+	<p>
+		<b>jQuery first()方法: </b>first() 方法返回被选元素的首个元素。
+	</p>
+	<!-- 示例二 -->
+	<hr />
+	<button class="last">选择最后一个 div元素中的最后一个p元素：</button>
+	<p>
+		<b>jQuery last() 方法: </b>last() 方法返回被选元素的最后一个元素。
+	</p>
+	<!-- 示例三 -->
+	<hr />
+	<h1>欢迎来到我的主页</h1>
+	<p class="tang">我是唐老鸭 (index:0,id,class:tang )。</p>
+	<p class="tang" id="intro">唐老鸭 (index:1,id:intro,class:tang)。</p>
+	<p class="tang" id="intro">我住在 Duckburg
+		(index:2,id:intro,class:tang)。</p>
+	<p class="tang">我最好的朋友是米老鼠 (index:3,id,class:tang )。</p>
+
+	<button class="eq">选取class为tang的第二个p元素：</button>
+	<p>
+		<b>jQuery eq() 方法: </b>eq() 方法返回被选元素中带有指定索引号的元素。
+	</p>
+	<!-- 示例四 -->
+	<hr />
+	<button class="filter">返回带有id为 "intro" 的所有p元素：</button>
+	<p>
+		<b>jQuery filter() 方法: </b>filter()
+		方法允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回。
+	</p>
+	<!-- 示例五 -->
+	<hr />
+	<button class="not">返回class为tang的不带id为"intro"的所有 p元素：</button>
+	<p>
+		<b>jQuery not() 方法: </b>not() 方法返回不匹配标准的所有元素。
+	</p>
+
+</body>
+</html>
